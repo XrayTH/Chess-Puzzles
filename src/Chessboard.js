@@ -10,6 +10,7 @@ const ChessGame = () => {
     if (chess.move(move)) {
       // Actualiza el estado del tablero después de un movimiento válido
       setFen(chess.fen());
+      console.log(move)
      
     }
     

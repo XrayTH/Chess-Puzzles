@@ -26,7 +26,7 @@ const ChessGame = () => {
 
             }
         } catch (error) {
-            // alert("Erroneo!")
+            alert("Erroneo!") 
             
         }
     };

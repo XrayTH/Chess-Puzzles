@@ -1,0 +1,84 @@
+#principal {
+    display: flex; /* Establece un contenedor flexible */
+}
+
+#Chessboard {
+    padding: 50px;
+}
+
+#tools{
+    display: flex; /* Establece un contenedor flexible */
+    margin: 1px;
+    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
+    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
+    width: 600px;
+    padding: 10px;
+    color: white;
+}
+
+#mainTools{
+    margin: 1px;
+    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
+    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
+    width: 250px;
+    padding: 5px;
+}
+
+#comment {
+    margin: 1px;
+    border-style: solid;
+    border-color: #fffafa;
+    margin-top: 25px;
+    height: 300px;
+    border-radius: 10px; /* Agrega bordes redondeados para que se asemeje a un globo de diálogo */
+    display: flex; /* Hace que el div se comporte como un contenedor flexible */
+    justify-content: flex-start; /* Alinea el contenido del div a la izquierda */
+    align-items: center; /* Centra verticalmente el contenido del div */
+    padding: 10px; /* Agrega un espacio interno al contenido del div */
+    position: relative; /* Establece la posición del div como relativa */
+    text-align: center;
+}
+
+#comment::before {
+    content: ""; /* Agrega un contenido vacío al pseudo-elemento */
+    position: absolute; /* Establece la posición del pseudo-elemento como absoluta */
+    top: 50%; /* Alinea el pseudo-elemento en la mitad superior del div */
+    left: -10px; /* Desplaza el pseudo-elemento hacia la izquierda */
+    transform: translateY(-50%); /* Centra verticalmente el pseudo-elemento */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent; /* Crea la punta del globo de diálogo */
+    border-bottom: 10px solid transparent; /* Crea la base del globo de diálogo */
+    border-right: 10px solid #000000; /* Crea el lado derecho del globo de diálogo */
+}
+
+#comment::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    border-width: 10px;
+    margin-left: -10px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+#time {
+    margin: 1px;
+    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
+    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
+    height: 200px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#kwaii {
+    margin: 1px;
+    margin-left: 5px;
+    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
+    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
+    width: 400px;
+    text-align: center;
+    align-items: center;
+    
+}

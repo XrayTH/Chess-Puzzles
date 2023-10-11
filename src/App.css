@@ -2,37 +2,79 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilo para el encabezado (header) */
+header {
+  background-color: #015e15; /* Verde oscuro */
+  color: #ffffff; /* Texto blanco */
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilo para la barra de navegación (nav) */
+nav {
+  background-color: #313030; /* Fondo negro */
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav li {
+  display: inline;
+  margin-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a {
+  text-decoration: none;
+  color: #00ff00; /* Verde brillante */
 }
+
+/* Cambiar el color del enlace al pasar el ratón por encima */
+nav a:hover {
+  color: #ffffff; /* Blanco */
+}
+
+/* Estilo para el elemento article */
+article {
+  display: flex; /* Establece un contenedor flexible */
+  background-color: #202020;
+}
+
+/* Estilo para el elemento aside (lista vertical lateral) */
+aside {
+  width: 200px;
+  height: 580px;
+  padding: 20px;
+  background-color: #0b3a14aa;
+  color: #fff;
+  margin-right: 10px; /* Agrega un espacio a la derecha del aside */
+}
+
+/* Estilo para los elementos de la lista vertical */
+aside ul {
+  list-style: circle; /* Elimina los marcadores de lista */
+  padding-left: 30px;
+}
+
+aside li {
+  margin-bottom: 10px; /* Agrega espacio entre elementos de la lista */
+  cursor: pointer;
+}
+
+/* Estilo para el contenido Chess a la derecha */
+.Chess {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+
+

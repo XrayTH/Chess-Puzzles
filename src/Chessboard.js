@@ -3,7 +3,7 @@ import Chessboard from 'chessboardjsx';
 import { Chess } from 'chess.js';
 import iniciarCronometro from './iniciarCronometro';
 import './Chess.css'
-import myImage from "./MiConv.com__main-qimg-635cfcea38e601b36571db1af9d7e2e5.png"
+import myImage from "./300x500.gif"
 
 
 
@@ -27,20 +27,22 @@ const ChessGame = () => {
     const [com, setCom] = useState(waifu[0].comentario)
     const [vidas, setVidas] = useState(3)
     const [semueve, setSemueve] = useState(true)
-    const [tiempo, setTiempo] = useState('0:30')
+    const [tiempo, setTiempo] = useState('0:00')
     const [press, setPress] = useState(false)
-    const tiempoInicial = 10; // Tiempo inicial en segundos
+    const tiempoInicial = 30; // Tiempo inicial en segundos
     const [chess] = useState(new Chess(mov))
     const [fen, setFen] = useState()
 
 
     const handleStart = () => {
-        setFen(chess.fen())
+        setFen(chess.fen(chess.load(mov)))
         setPress(true)
         setSemueve(true)
+        setVidas(3)
+        setCom(waifu[0].comentario)
         iniciarCronometro(tiempoInicial, (tiempoFormateado) => {
             setTiempo(tiempoFormateado);
-            if (tiempoFormateado === "0:00") {
+            if (tiempoFormateado === "0:00" && !chess.isCheckmate()) {
                 setCom(waifu[4].comentario)
                 setSemueve(false)
                 setPress(false)
@@ -51,6 +53,9 @@ const ChessGame = () => {
 
     const lose = () => {
         setTiempo("0:00")
+        iniciarCronometro(0, (tiempoFormateado) => {
+            setTiempo(tiempoFormateado)
+        })
         setCom(waifu[4].comentario)
         setSemueve(false)
         setPress(false)
@@ -70,6 +75,11 @@ const ChessGame = () => {
                     //alert("Buen Trabajo!")
                     setCom(waifu[3].comentario)
                     setSemueve(false)
+                    setTiempo("0:00")
+                    setPress(false)
+                    iniciarCronometro(0, (tiempoFormateado) => {
+                        setTiempo(tiempoFormateado)
+                    })
                 } else {
                     //alert("Sigue intentando...")
                     setCom(waifu[1].comentario)

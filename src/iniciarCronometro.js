@@ -1,5 +1,11 @@
+let interval;
+
 function iniciarCronometro(tiempoInicial, callback) {
-  const interval = setInterval(() => {
+  if (interval) {
+    clearInterval(interval); // Detener el cronómetro existente si hay uno en curso
+  }
+
+  interval = setInterval(() => {
     if (tiempoInicial >= 0) {
       const minutos = Math.floor(tiempoInicial / 60);
       const segundos = tiempoInicial % 60;
@@ -17,3 +23,4 @@ function iniciarCronometro(tiempoInicial, callback) {
 }
 
 export default iniciarCronometro;
+

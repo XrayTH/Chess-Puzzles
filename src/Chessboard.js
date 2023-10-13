@@ -28,8 +28,8 @@ const ChessGame = () => {
     const [vidas, setVidas] = useState(3)
     const [semueve, setSemueve] = useState(true)
     const [tiempo, setTiempo] = useState('0:00')
-    const [press, setPress] = useState(false)
     const tiempoInicial = 30; // Tiempo inicial en segundos
+    const [press, setPress] = useState(false)
     const [chess] = useState(new Chess(mov))
     const [fen, setFen] = useState()
 

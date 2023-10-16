@@ -1,5 +1,5 @@
 #principal {
-    display: flex; /* Establece un contenedor flexible */
+    display: flex; 
 }
 
 #Chessboard {
@@ -7,10 +7,8 @@
 }
 
 #tools{
-    display: flex; /* Establece un contenedor flexible */
+    display: flex; 
     margin: 1px;
-    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
-    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
     width: 600px;
     padding: 10px;
     color: white;
@@ -18,8 +16,6 @@
 
 #mainTools{
     margin: 1px;
-    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
-    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
     width: 250px;
     padding: 5px;
 }
@@ -30,12 +26,12 @@
     border-color: #fffafa;
     margin-top: 25px;
     height: 300px;
-    border-radius: 10px; /* Agrega bordes redondeados para que se asemeje a un globo de diálogo */
-    display: flex; /* Hace que el div se comporte como un contenedor flexible */
-    justify-content: flex-start; /* Alinea el contenido del div a la izquierda */
-    align-items: center; /* Centra verticalmente el contenido del div */
-    padding: 10px; /* Agrega un espacio interno al contenido del div */
-    position: relative; /* Establece la posición del div como relativa */
+    border-radius: 10px; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 10px; 
+    position: relative; 
     text-align: center;
 }
 
@@ -65,8 +61,8 @@
 
 #time {
     margin: 1px;
-    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
-    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
+    border-style: solid; 
+    border-color: #ffffff; 
     height: 200px;
     margin-top: 10px;
     text-align: center;
@@ -74,11 +70,7 @@
 
 #kwaii {
     margin: 1px;
-    margin-left: 5px;
-    border-style: solid; /* Establece el estilo del borde (por ejemplo, "solid" para un borde sólido) */
-    border-color: #ffffff; /* Establece el color del borde (por ejemplo, rojo) */
     width: 400px;
     text-align: center;
-    align-items: center;
     
 }

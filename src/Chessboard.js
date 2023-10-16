@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Chessboard from 'chessboardjsx';
 import { Chess } from 'chess.js';
 import iniciarCronometro from './iniciarCronometro';
-import './Chess.css'
+import './Styles/Chess.css'
 import waifu1 from "./imagenes/chan1.png"
 import waifu2 from "./imagenes/chan2.png"
 

@@ -72,5 +72,6 @@
     margin: 1px;
     width: 400px;
     text-align: center;
+    cursor: no-drop;
     
 }

@@ -1,6 +1,8 @@
 import Chess from "./Chessboard";
 import "./Styles/App.css"
 
+//entrega 1
+
 function App() {
   return (
     <div>

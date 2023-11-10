@@ -132,6 +132,8 @@ const ChessGame = () => {
                     onDrop={(move) => handleMove({ from: move.sourceSquare, to: move.targetSquare, promotion: 'q' })}
                     draggable={semueve}
                     width={500}
+                    lightSquareStyle={{backgroundColor: 'gray'}}
+                    darkSquareStyle={{backgroundColor: 'darkGreen'}}
 
                 />
             </div>

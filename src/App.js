@@ -1,40 +1,43 @@
 import React, { useState } from 'react';
-import Chess from "./Chessboard";
+import Inicio from "./Inicio"
+import Perfil from "./Perfil"
+import Chess from "./Chessboard"
+import Rank from "./Ranking"
 import "./Styles/App.css"
 
-const Top = () => {
+const Top = ({ page, select }) => {
   return (
     <>
       <header>Chess Puzzles</header>
 
       <nav>
         <ul>
-          <li>Inicio</li>
-          <li>Perfil</li>
-          <li>Puzzles</li>
-          <li>Ranking</li>
+          <li onClick={() => select(1)}>Inicio</li>
+          <li onClick={() => select(2)}>Perfil</li>
+          <li onClick={() => select(3)}>Puzzles</li>
+          <li onClick={() => select(4)}>Ranking</li>
         </ul>
       </nav>
     </>
-  )
-}
+  );
+};
 
-const Article = () => {
+const Article = ({ page }) => {
 
-  const [page, setPage] = useState(3)
+  
 
   switch (page) {
     case 1:
       return (
         <>
-          <p>1</p>
+          <Inicio />
         </>
       )
 
     case 2:
       return (
         <>
-          <p>2</p>
+          <Perfil />
         </>
       )
 
@@ -45,6 +48,10 @@ const Article = () => {
             <h1>Puzzles:</h1>
             <ul>
               <li>Nivel 1</li>
+              <li>Nivel 2</li>
+              <li>Nivel 3</li>
+              <li>Nivel 4</li>
+              <li>Nivel 5</li>
             </ul>
           </aside>
 
@@ -55,14 +62,14 @@ const Article = () => {
     case 4:
       return (
         <>
-          <p>4</p>
+          <Rank />
         </>
       )
 
     default:
       return (
         <>
-          <p>?</p>
+          <p>Error</p>
         </>
       )
   }
@@ -71,15 +78,18 @@ const Article = () => {
 
 function App() {
 
+  const [page, setPage] = useState(3);
 
+  const select = (x) => {
+    setPage(x);
+  };
 
   return (
     <div>
-
-      <Top />
-
-      <Article/>
-
+      <div>
+        <Top page={page} select={select} />
+        <Article page={page} />
+      </div>
     </div>
   );
 }

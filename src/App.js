@@ -5,6 +5,8 @@ import Chess from "./Chessboard"
 import Rank from "./Ranking"
 import "./Styles/App.css"
 
+// hola
+
 const Top = ({ page, select }) => {
   return (
     <>

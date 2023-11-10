@@ -1,11 +1,10 @@
+import React, { useState } from 'react';
 import Chess from "./Chessboard";
 import "./Styles/App.css"
 
-//entrega 1
-
-function App() {
+const Top = () => {
   return (
-    <div>
+    <>
       <header>Chess Puzzles</header>
 
       <nav>
@@ -16,18 +15,70 @@ function App() {
           <li>Ranking</li>
         </ul>
       </nav>
+    </>
+  )
+}
 
-    <article>
+const Article = () => {
 
-      <aside>
-        <h1>Puzzles:</h1>
-        <ul>
-          <li>Nivel 1</li>
-        </ul>
-      </aside>
+  const [page, setPage] = useState(3)
 
-      <Chess/>
-    </article>
+  switch (page) {
+    case 1:
+      return (
+        <>
+          <p>1</p>
+        </>
+      )
+
+    case 2:
+      return (
+        <>
+          <p>2</p>
+        </>
+      )
+
+    case 3:
+      return (
+        <article>
+          <aside>
+            <h1>Puzzles:</h1>
+            <ul>
+              <li>Nivel 1</li>
+            </ul>
+          </aside>
+
+          <Chess />
+        </article>
+      )
+
+    case 4:
+      return (
+        <>
+          <p>4</p>
+        </>
+      )
+
+    default:
+      return (
+        <>
+          <p>?</p>
+        </>
+      )
+  }
+
+}
+
+function App() {
+
+
+
+  return (
+    <div>
+
+      <Top />
+
+      <Article/>
 
     </div>
   );

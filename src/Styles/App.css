@@ -4,7 +4,7 @@
 
 /* Estilo para el encabezado (header) */
 header {
-  background-color: #015e15; /* Verde oscuro */
+  background-color: #009933; /* Verde oscuro */
   color: #ffffff; /* Texto blanco */
   text-align: center;
   padding: 20px;
@@ -13,7 +13,7 @@ header {
 
 /* Estilo para la barra de navegación (nav) */
 nav {
-  background-color: #313030; /* Fondo negro */
+  background-color: #006633; /* Fondo negro */
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #00ff00; /* Verde brillante */
+  color: #006633; /* Verde brillante */
 }
 
 /* Cambiar el color del enlace al pasar el ratón por encima */
@@ -52,7 +52,7 @@ aside {
   width: 200px;
   height: 580px;
   padding: 20px;
-  background-color: #0b3a14aa;
+  background-color: #333333;
   color: #fff;
   margin-right: 10px; /* Agrega un espacio a la derecha del aside */
 }

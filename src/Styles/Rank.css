@@ -1,0 +1,96 @@
+/* Styles/Rank.css */
+body {
+  background: #202020; /* Fondo negro */
+}
+
+.rank-container {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Establece el fondo ajedrezado para las filas impares */
+.rank-container h2 {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: yellow;
+  margin-bottom: 10px;
+}
+
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Establece el fondo ajedrezado para las filas impares */
+.rank-table tbody tr:nth-child(odd) {
+  background-color: #fff; /* Fondo blanco para filas impares */
+}
+
+/* Establece el fondo ajedrezado para las filas pares */
+.rank-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5; /* Fondo gris claro para filas pares */
+}
+
+.rank-table th,
+.rank-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.rank-table th {
+  background-color: #f5f5f5;
+}
+
+.arrow-up,
+.arrow-down,
+.equal {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.arrow-up {
+  color: green;
+}
+
+.arrow-down {
+  color: red;
+}
+
+.equal {
+  color: gray;
+}
+
+.rank-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo para la corona */
+.corona {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 24px;
+  color: gold;
+}
+
+/* Estilo para el sentido */
+.siente {
+  font-weight: bold;
+  margin-left: 5px;
+  color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+  

@@ -46,6 +46,7 @@ const ChessGame = ({ level }) => {
     const [tiempo, setTiempo] = useState('0:00')
     const [tiempoInicial, setTI] = useState(30)
     const [press, setPress] = useState(false)
+    const [points, setPoints] = useState(0)
     const [nvl, setNvl] = useState(nvl3)
     const [chess] = useState(new Chess(nvl))
     const [fen, setFen] = useState()
@@ -139,6 +140,9 @@ const ChessGame = ({ level }) => {
 
                     //alert("Buen Trabajo!")
                     setMonaChina(3)
+                    setPoints(tiempoStringASeconds(tiempo))
+                    console.log("segundos:"+tiempoStringASeconds(tiempo))
+                    console.log("su puntaje es:"+points)
                     setSemueve(false)
                     setTiempo("0:00")
                     setPress(false)

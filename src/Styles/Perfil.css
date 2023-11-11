@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+  }
+  
+  .left-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333; /* Contorno del cuadro izquierdo */
+    margin-right: 100px; /* Espacio entre los cuadros */
+  }
+  
+  .circle {
+    width: 200px;
+    height: 200px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Ajusta el espacio entre el círculo y los botones */
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    display: block; /* Hace que los botones sean bloques (uno encima del otro) */
+    width: 100%; /* Ocupa el ancho completo del contenedor padre */
+  }
+  
+  .right-box {
+    padding: 20px;
+    flex-grow: 1; /* Hace que el cuadro derecho ocupe el espacio restante */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  }
+  
+  .info-box,
+  .comments-box {
+    margin-top: 150px;
+  }
+  

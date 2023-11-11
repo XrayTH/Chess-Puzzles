@@ -10,7 +10,7 @@ function Inicio() {
     <div className="inicio-container">
       <div className="inicio-header">
         <h1 className="inicio-title">Bienvenido.</h1>
-        <p>Por favor, elige una opción:</p>
+        <h3>Por favor, elige una opción:</h3>
       </div>
 
       <div className="opciones-container">

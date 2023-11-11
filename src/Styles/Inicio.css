@@ -1,21 +1,35 @@
 /* Estilo para el título de bienvenida y párrafos en Inicio.js */
-.inicio-container .inicio-title,
+.inicio-container .inicio-title{
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin: 10px;
+  color: #ffffff;
+}
+
 .inicio-container p {
   display: flex;
   align-items: flex-start;
   text-align: left;
   margin: 10px;
+  color: #000;
 }
+
+h1, h3{
+  color: #ffffff;
+}
+
 */
 /* Estilo para el contenedor principal de Inicio.js */
   .inicio-container {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     margin-top: 10px;  
     justify-content: left;
     height: 100vh;
     display: flex;
     align-items: flex-start;
+
   }
   */
   /* Estilo para el contenedor de opciones en Inicio.js */
@@ -26,10 +40,10 @@
   
   /* Estilo para los botones de opción en Inicio.js */
   .opcion-button {
-    background-color: #45a049;
+    background-color: #669933 ;
     color: white;
     padding: 10px 15px;
-    border: none;
+    border: 006633;
     border-radius: 4px;
     cursor: pointer;
     margin: 20px 10px;
@@ -38,13 +52,13 @@
   }
   
   .opcion-button:hover {
-    background-color: #45a049;
+    background-color: #669933;
   }
   .opcion-button:hover {
-    background-color: #4caf50;
+    background-color: #669933 ;
     color: black;
     padding: 10px 15px;
-    border: none;
+    border: 006633;
     border-radius: 4px;
     cursor: pointer;
     margin: 20px 10px;
@@ -57,7 +71,7 @@
   .form-container {
     max-width: 400px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -70,6 +84,7 @@
   .form-title {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #000;
   }
   
   /* Estilo para etiquetas, inputs y botones del formulario en Inicio.js */
@@ -80,26 +95,27 @@
     margin-bottom: 16px;
     width: 100%;
     box-sizing: border-box;
+    color: #000;
   }
   
   .form-button {
-    background-color: #4caf50;
-    color: white;
+    background-color: #669933 ;
+    color: black;
     padding: 10px 15px;
-    border: none;
+    border: 006633;
     border-radius: 4px;
     cursor: pointer;
   }
   
   .form-button:hover {
-    background-color: #45a049;
+    background-color: #669933;
   }
   
   .form-button:hover{
-    background-color: #4caf50;
+    background-color: #669933 ;
     color: black;
     padding: 10px 15px;
-    border: none;
+    border: 006633;
     border-radius: 4px;
     cursor: pointer;
   }
@@ -109,9 +125,9 @@
     max-width: 400px;
     margin-right: auto; /* Esto centrará el contenedor en la página */
     padding: 50px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 20px 10px rgba(35, 14, 155, 0.1);
   }
 
   /* Estilo para las etiquetas del formulario */
@@ -130,53 +146,26 @@
 
   /* Estilo para el botón del formulario */
   .form-button {
-    background-color: #4caf50;
+    background-color: #669933 ;
     color: white;
     padding: 10px 15px;
-    border: none;
+    border: 006633;
     border-radius: 4px;
     cursor: pointer;
   }
 
   .form-button:hover {
-    background-color: #45a049;
+    background-color: #669933;
   }
   
-  /* Estilo para el contenedor de noticias en Inicio.js *
-  .noticias-container {
-    width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: 100px;
-    position: fixed;
-    top: auto;
-    right: 20px;
-  }
-  
-  /* Estilo para el contenedor de noticias en Inicio.js *
-  .noticias-container {
-    width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: -100px;
-    position: fixed;
-    top: auto;
-    right: 20px;
-  }
-  */
   /* Estilo para el contenedor de noticias en Inicio.js */
 .noticias-container {
   width: 400px;
   padding: 20px;
   background-color: #ffffff;
+  color: #000;
   border-radius: 8px;
-  box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 20px 10px rgba(35, 14, 155, 0.1);
   text-align: center;
   margin-top: -100px;
   position: fixed;
@@ -188,4 +177,8 @@
 /* Estilo para el contenedor de noticias en Inicio.js después de hacer clic */
 .noticias-container.after-click {
   margin-top: -530px;
+}
+
+body{
+  background-color: #333333;
 }

@@ -111,6 +111,11 @@ const ChessGame = ({ level }) => {
         });
     };
 
+    const tiempoStringASeconds = (tiempoString) => {
+        const [minutos, segundos] = tiempoString.split(':').map(Number);
+        return minutos * 60 + segundos;
+      }
+
     const lose = () => {
         setTiempo("0:00")
         iniciarCronometro(0, (tiempoFormateado) => {

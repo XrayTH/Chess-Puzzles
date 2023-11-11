@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Inicio from "./Inicio"
+//import Inicio from "./Inicio"
 import Perfil from "./Perfil"
 import Chess from "./Chessboard"
 import Rank from "./Ranking"
+import { Inicio, IniciarSesion, Registrarse } from './Inicio';
 import "./Styles/App.css"
+
 
 const Top = ({ page, select }) => {
   return (

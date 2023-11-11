@@ -1,0 +1,191 @@
+/* Estilo para el título de bienvenida y párrafos en Inicio.js */
+.inicio-container .inicio-title,
+.inicio-container p {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin: 10px;
+}
+*/
+/* Estilo para el contenedor principal de Inicio.js */
+  .inicio-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin-top: 10px;  
+    justify-content: left;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+  }
+  */
+  /* Estilo para el contenedor de opciones en Inicio.js */
+  .opciones-container {
+    margin-right: 20px;
+    text-align: right;
+  }
+  
+  /* Estilo para los botones de opción en Inicio.js */
+  .opcion-button {
+    background-color: #45a049;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 10px;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .opcion-button:hover {
+    background-color: #45a049;
+  }
+  .opcion-button:hover {
+    background-color: #4caf50;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 10px;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+  }
+  
+  /* Estilo para el contenedor de iniciar sesión y registrarse en Inicio.js */
+  .form-container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 20px;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  /* Estilo para el formulario y título de Iniciar Sesión en Inicio.js */
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para etiquetas, inputs y botones del formulario en Inicio.js */
+  .form-label,
+  .form-input,
+  .form-button {
+    display: block;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-button:hover{
+    background-color: #4caf50;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Estilo para el contenedor del formulario */
+  .form-container {
+    max-width: 400px;
+    margin-right: auto; /* Esto centrará el contenedor en la página */
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilo para las etiquetas del formulario */
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* Estilo para los campos de entrada del formulario */
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Estilo para el botón del formulario */
+  .form-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilo para el contenedor de noticias en Inicio.js *
+  .noticias-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 100px;
+    position: fixed;
+    top: auto;
+    right: 20px;
+  }
+  
+  /* Estilo para el contenedor de noticias en Inicio.js *
+  .noticias-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: -100px;
+    position: fixed;
+    top: auto;
+    right: 20px;
+  }
+  */
+  /* Estilo para el contenedor de noticias en Inicio.js */
+.noticias-container {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: -100px;
+  position: fixed;
+  top: auto;
+  right: 20px;
+  transition: margin-top 0.3s ease-in-out; /* Agregado para una transición suave */
+}
+
+/* Estilo para el contenedor de noticias en Inicio.js después de hacer clic */
+.noticias-container.after-click {
+  margin-top: -530px;
+}

@@ -78,11 +78,11 @@ const ChessGame = ({ level }) => {
                 console.log("watafa")
         }
         console.log('Estado del juego actualizado:', nvl);
-    
-        // Realiza aquí cualquier otra acción que desees después de la actualización del estado
-      }, [level, nvl]);
 
-    
+        // Realiza aquí cualquier otra acción que desees después de la actualización del estado
+    }, [level, nvl]);
+
+
 
     const setMonaChina = (x) => {
         setCom(waifu[x].comentario)
@@ -95,9 +95,10 @@ const ChessGame = ({ level }) => {
         setSemueve(true)
         setVidas(3)
         setMonaChina(0)
+        setPoints(0)
     }
 
-    
+
 
     const handleStart = () => {
         inicio()
@@ -115,7 +116,7 @@ const ChessGame = ({ level }) => {
     const tiempoStringASeconds = (tiempoString) => {
         const [minutos, segundos] = tiempoString.split(':').map(Number);
         return minutos * 60 + segundos;
-      }
+    }
 
     const lose = () => {
         setTiempo("0:00")
@@ -140,9 +141,9 @@ const ChessGame = ({ level }) => {
 
                     //alert("Buen Trabajo!")
                     setMonaChina(3)
-                    setPoints(tiempoStringASeconds(tiempo))
-                    console.log("segundos:"+tiempoStringASeconds(tiempo))
-                    console.log("su puntaje es:"+points)
+                    const newPoints = tiempoStringASeconds(tiempo);
+                    setPoints((newPoints*vidas));
+                    console.log("su puntaje es:" + newPoints);
                     setSemueve(false)
                     setTiempo("0:00")
                     setPress(false)
@@ -199,6 +200,7 @@ const ChessGame = ({ level }) => {
                         <p>Nivel Seleccionado: {level}</p>
                         <p>Tiempo: {tiempo}</p>
                         <p>Vidas: {vidas}</p>
+                        <p>Puntaje: {points}</p>
                         <button onClick={handleStart} disabled={press}>Iniciar</button>
                     </div>
                 </div>

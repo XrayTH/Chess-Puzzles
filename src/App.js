@@ -5,12 +5,15 @@ import Chess from "./Chessboard"
 import Rank from "./Ranking"
 import { Inicio, IniciarSesion, Registrarse } from './Inicio';
 import "./Styles/App.css"
+import logo from "./imagenes/Logo Chees Puzzles.png"
+import patron1 from "./imagenes/Patron 1.png"
+import patron2 from "./imagenes/patron 2.png"
 
 
 const Top = ({ page, select }) => {
   return (
     <>
-      <header>Chess Puzzles</header>
+      <header><img src={patron1} alt="Chess Puzzles"/><img id="logo" src={logo} alt="Chess Puzzles" /><img src={patron2} alt="Chess Puzzles"/></header>
 
       <nav>
         <ul>

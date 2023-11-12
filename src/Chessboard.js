@@ -78,8 +78,6 @@ const ChessGame = ({ level }) => {
                 console.log("watafa")
         }
         console.log('Estado del juego actualizado:', nvl);
-
-        // Realiza aquí cualquier otra acción que desees después de la actualización del estado
     }, [level, nvl]);
 
 

@@ -7,6 +7,7 @@ body {
   max-width: 600px;
   margin: 20px auto;
   text-align: center;
+  color: black;
 }
 
 /* Establece el fondo ajedrezado para las filas impares */

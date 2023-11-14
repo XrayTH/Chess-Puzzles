@@ -6,9 +6,18 @@
 header {
   background-color: #009933; /* Verde oscuro */
   color: #ffffff; /* Texto blanco */
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
+  display: flex;
+  padding: 0px;
+  height: 178px;
+}
+
+header img {
+  height: 100%
+}
+
+#logo {
+  margin-left: 12%;
+  margin-right: 12%;
 }
 
 /* Estilo para la barra de navegación (nav) */

@@ -5,12 +5,15 @@ import Chess from "./Chessboard"
 import Rank from "./Ranking"
 import { Inicio, IniciarSesion, Registrarse } from './Inicio';
 import "./Styles/App.css"
-// hola
+import logo from "./imagenes/Logo Chees Puzzles.png"
+import patron1 from "./imagenes/Patron 1.png"
+import patron2 from "./imagenes/patron 2.png"
+
 
 const Top = ({ page, select }) => {
   return (
     <>
-      <header>Chess Puzzles</header>
+      <header><img src={patron1} alt="Chess Puzzles"/><img id="logo" src={logo} alt="Chess Puzzles" /><img src={patron2} alt="Chess Puzzles"/></header>
 
       <nav>
         <ul>
@@ -26,7 +29,28 @@ const Top = ({ page, select }) => {
 
 const Article = ({ page }) => {
 
-  
+  const [level, setLevel] = useState(1)
+
+  const sLevel = (x) => {
+    setLevel(x)
+  } 
+
+  const Aside = ({level, setLevel}) => {
+
+    return(
+      <aside>
+            <h1>Puzzles:</h1>
+            <ul>
+              <li onClick={() => sLevel(1)}>Nivel 1</li>
+              <li onClick={() => sLevel(2)}>Nivel 2</li>
+              <li onClick={() => sLevel(3)}>Nivel 3</li>
+              <li onClick={() => sLevel(4)}>Nivel 4</li>
+              <li onClick={() => sLevel(5)}>Nivel 5</li>
+            </ul>
+          </aside>
+    )
+
+  }
 
   switch (page) {
     case 1:
@@ -46,18 +70,8 @@ const Article = ({ page }) => {
     case 3:
       return (
         <article>
-          <aside>
-            <h1>Puzzles:</h1>
-            <ul>
-              <li>Nivel 1</li>
-              <li>Nivel 2</li>
-              <li>Nivel 3</li>
-              <li>Nivel 4</li>
-              <li>Nivel 5</li>
-            </ul>
-          </aside>
-
-          <Chess />
+          <Aside level={level} sLevel={sLevel}/>
+          <Chess level={level}/>
         </article>
       )
 

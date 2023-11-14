@@ -33,8 +33,7 @@ function Perfil() {
             <h2>Información</h2>
             <p>Texto de información aquí...</p>
           </div>
-
-          {/* Nuevo cuadro de ranking */}
+         
           <div className="ranking-box">
             <h2>Ranking</h2>
             <ul>

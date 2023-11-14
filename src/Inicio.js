@@ -5,7 +5,15 @@ import App from './App';
 
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
-
+  const [noticias, setNoticias] = useState([
+    { titulo: 'Nuevo Nivel 6', contenido: 'El nivel 6 se agregará pronto. ¡Mantente actualizado!' },
+    { titulo: 'Próximo Nivel 7', contenido: 'El nivel 7 se agregará pronto. ¡Mantente actualizado!' },
+    { titulo: 'Nueva Actualización', contenido: 'Una gran actualización llegará esta semana. ¡No te la pierdas!' },
+    {titulo: 'Juan Valverde, 1° en el Ranking', contenido: 'Esta semana Juan Valverde es el Número 1, ¡trata de Derrocarlo!'},
+    {titulo: '', contenido: ''}
+    // Agrega más noticias según sea necesario
+  ]);
+  
   return (
     <div className="inicio-container">
       <div className="inicio-header">
@@ -23,16 +31,15 @@ function Inicio() {
         {opcion === 'registrarse' && <Registrarse />}
       </div>
 
-      <div className={`noticias-container ${opcion ? 'after-click' : 'before-click'}`}>
-        <h2>Noticias</h2>
-        <p>El nivel 6 se agregará pronto. ¡Mantente actualizado!</p>
-        <p>El nivel 7 se agregará pronto. ¡Mantente actualizado!</p>
-        <p>El nivel 8 se agregará pronto. ¡Mantente actualizado!</p>
-        <p>El nivel 9 se agregará pronto. ¡Mantente actualizado!</p>
-        <p>El nivel 10 se agregará pronto. ¡Mantente actualizado!</p>
-        <p>Juan Valverde es el Numero 1 de esta Semana.</p>
-        {/* Agrega más noticias según sea necesario */}
-      </div>
+      <div className="noticias-container">
+      <h2>Noticias</h2>
+      {noticias.map((noticia, index) => (
+        <div key={index} className="noticia">
+          <h3>{noticia.titulo}</h3>
+          <p>{noticia.contenido}</p>
+        </div>
+      ))}
+    </div>
     </div>
   );
 }

@@ -15,6 +15,10 @@ function Inicio() {
   ]);
 
   const containerClass = opcion ? `inicio-container opciones-seleccionada` : "inicio-container";
+  
+  const switchToRegistro = () => {
+    setOpcion('registrarse');
+  };
 
   return (
     <div className={containerClass}>
@@ -24,14 +28,15 @@ function Inicio() {
           <h3>Por favor, elige una opción:</h3>
         </div>
         <div className="opciones-container oculto">
-          <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
+        <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
           <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
         </div>
       </div>
 
+      
       <div className="contenido-container">
-        {opcion === 'iniciarSesion' && <IniciarSesion />}
-        {opcion === 'registrarse' && <Registrarse />}
+        {opcion === 'iniciarSesion' && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
+        {opcion === 'registrarse' && <Registrarse onSwitchToInicioSesion={() => setOpcion('iniciarSesion')} />}
       </div>
 
       <div className="noticias-container">
@@ -44,18 +49,17 @@ function Inicio() {
       ))}
     </div>
     </div>
+
   );
 }
 
 
-
-function IniciarSesion() {
+function IniciarSesion({ onSwitchToRegistro }) {
   const [email, setEmail] = useState('');
   const [contrasena, setContrasena] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para iniciar sesión
     console.log('Iniciar sesión con: ', email, contrasena);
   };
 
@@ -64,7 +68,8 @@ function IniciarSesion() {
       <h2 className="form-title">Iniciar Sesión</h2>
       <form onSubmit={handleSubmit}>
         <label className="form-label" htmlFor="email">Correo Electrónico:</label>
-        <input className="form-input"
+        <input
+          className="form-input"
           type="email"
           id="email"
           name="email"
@@ -74,7 +79,8 @@ function IniciarSesion() {
         />
 
         <label className="form-label" htmlFor="contrasena">Contraseña:</label>
-        <input className="form-input"
+        <input
+          className="form-input"
           type="password"
           id="contrasena"
           name="contrasena"
@@ -84,19 +90,25 @@ function IniciarSesion() {
         />
 
         <button className="form-button" type="submit">Iniciar Sesión</button>
+        <button
+          className="form-button"
+          type="button"
+          onClick={onSwitchToRegistro}
+        >
+          Quiero registrarme
+        </button>
       </form>
     </div>
   );
 }
 
-function Registrarse() {
+function Registrarse({ onSwitchToInicioSesion }) {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [contrasena, setContrasena] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para registrar al usuario
     console.log('Registrarse con: ', nombre, email, contrasena);
   };
 
@@ -105,7 +117,8 @@ function Registrarse() {
       <h2 className="form-title">Registrarse</h2>
       <form onSubmit={handleSubmit}>
         <label className="form-label" htmlFor="nombre">Nombre:</label>
-        <input className="form-input"
+        <input
+          className="form-input"
           type="text"
           id="nombre"
           name="nombre"
@@ -115,7 +128,8 @@ function Registrarse() {
         />
 
         <label className="form-label" htmlFor="email">Correo Electrónico:</label>
-        <input className="form-input"
+        <input
+          className="form-input"
           type="email"
           id="email"
           name="email"
@@ -125,7 +139,8 @@ function Registrarse() {
         />
 
         <label className="form-label" htmlFor="contrasena">Contraseña:</label>
-        <input className="form-input"
+        <input
+          className="form-input"
           type="password"
           id="contrasena"
           name="contrasena"
@@ -135,6 +150,13 @@ function Registrarse() {
         />
 
         <button className="form-button" type="submit">Registrarse</button>
+        <button
+          className="form-button"
+          type="button"
+          onClick={onSwitchToInicioSesion}
+        >
+          Ya tengo una cuenta
+        </button>
       </form>
     </div>
   );

@@ -35,13 +35,13 @@ body {
   }
 
   .opcion-button:hover {
-    background-color: #669933 ;
+    background-color: #669933;
     color: black;
     padding: 10px 15px;
     border: 006633;
     border-radius: 4px;
     cursor: pointer;
-    margin: 20px 10px;
+    margin: 10px; /* Ajusta el margen aquí para acercar los botones al texto */
   }
   
 /* Estilo para etiquetas, inputs y botones del formulario en Inicio.js */

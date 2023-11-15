@@ -13,17 +13,20 @@ function Inicio() {
     {titulo: '', contenido: ''}
     // Agrega más noticias según sea necesario
   ]);
-  
-  return (
-    <div className="inicio-container">
-      <div className="inicio-header">
-        <h1 className="inicio-title">Bienvenido.</h1>
-        <h3>Por favor, elige una opción:</h3>
-      </div>
 
-      <div className="opciones-container">
-        <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
-        <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
+  const containerClass = opcion ? `inicio-container opciones-seleccionada` : "inicio-container";
+
+  return (
+    <div className={containerClass}>
+      <div className="contenedor-bienvenida">
+        <div className="inicio-header">
+          <h1 className="inicio-title">Bienvenido.</h1>
+          <h3>Por favor, elige una opción:</h3>
+        </div>
+        <div className="opciones-container oculto">
+          <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
+          <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
+        </div>
       </div>
 
       <div className="contenido-container">
@@ -43,6 +46,7 @@ function Inicio() {
     </div>
   );
 }
+
 
 
 function IniciarSesion() {

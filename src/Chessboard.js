@@ -5,6 +5,9 @@ import iniciarCronometro from './iniciarCronometro';
 import './Styles/Chess.css'
 import waifu1 from "./imagenes/chan1.png"
 import waifu2 from "./imagenes/chan2.png"
+import waifu3 from "./imagenes/chan3.png"
+import waifu4 from "./imagenes/chan4.png"
+import waifu5 from "./imagenes/chan5.png"
 
 
 
@@ -13,13 +16,13 @@ const ChessGame = ({ level }) => {
     const waifu = [
         {
             comentario: "Bienvenido onii-chan, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",
-            imagen: waifu1
+            imagen: waifu4
         }, {
             comentario: "Esa no es la solucion... ¡Sigue intentando! :)",
-            imagen: waifu2
+            imagen: waifu3
         }, {
             comentario: "¡Hmp! Ese movimiento no es valido >:c",
-            imagen: waifu2
+            imagen: waifu5
         }, {
             comentario: "¡Lo lograste! Buen trabajo, senpai >u<",
             imagen: waifu1

@@ -94,7 +94,7 @@ const Article = ({ page }) => {
 
 function App() {
 
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(1);
 
   const select = (x) => {
     setPage(x);

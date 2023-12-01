@@ -16,13 +16,13 @@ header {
 .content {
   display: flex;
   background-color: #000000;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando el espacio es insuficiente */
 }
 
 .left-box {
   text-align: center;
   padding: 20px;
   border: 1px solid #333; 
-  width: 250px; 
   height: 500px;
   margin-right: 30px; 
   margin-left: 15px;
@@ -96,11 +96,30 @@ header {
 
 .textarea {
   height: 200px;
-  width: 700px;
+  width: 100%; /* Cambiado de 700px a 100% */
   color: black; 
 }
 
 .info-box,
 .comments-box {
   margin-top: 20px;
+}
+
+/* Media query para pantallas pequeñas (smartphones) */
+@media only screen and (max-width: 720px) {
+  .left-box {
+    width: 100%; /* Cambiado a ocupar el 100% del ancho */
+    margin: 0; /* Eliminado el margen superior e inferior */
+  }
+
+  .right-box {
+    width: 100%; /* Cambiado a ocupar el 100% del ancho */
+    margin: 10px 0; /* Margen superior e inferior de 10px */
+  }
+
+  .image-container img,
+  .image-container2 img,
+  .textarea {
+    max-width: 100%; /* Cambiado a ocupar el 100% del ancho */
+  }
 }

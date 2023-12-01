@@ -9,7 +9,7 @@ body {
   .inicio-container p {
     display: flex;
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     margin: 30px;
     color: #000;
   }
@@ -18,7 +18,7 @@ body {
   .inicio-header {
     color: #ffffff;
     text-align: center;
-    margin: 20px -245px;
+    margin: 20px ;
   }
 
 
@@ -37,7 +37,7 @@ body {
   .opcion-button:hover {
     background-color: #669933;
     color: black;
-    padding: 10px 15px;
+    padding: 15px;
     border: 006633;
     border-radius: 4px;
     cursor: pointer;
@@ -91,6 +91,8 @@ body {
 
   .inicio-container.opciones-seleccionada .contenedor-bienvenida {
     display: none;
+    
+
   }
 
  /* Añade reglas para ocultar las opciones cuando una opción está seleccionada */
@@ -118,7 +120,7 @@ body {
   border-radius: 8px;
   text-align: left;
   margin: 20px; /* Ajustado para estar en la esquina derecha y abajo */
-  position: absolute;
+  position: center;
   right: 20px;
   bottom: 20px; /* Ajustado para estar en la esquina derecha y abajo */
 }
@@ -138,4 +140,18 @@ body {
 }
 
 
+/* Media Query para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+  .inicio-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
+  .form-container,
+  .noticias-container {
+    width: 100%;
+    max-width: none;
+    margin: 20px 0;
+    position: static;
+  }
+}

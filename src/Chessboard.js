@@ -32,15 +32,13 @@ const ChessGame = ({ level }) => {
         }
     ]
 
-
-
-    let nvl1 = '8/7p/5B2/7P/3p4/3Pk1K1/8/q1N5 w - - 0 1'
-    let nvl2 = '1nr1r3/pbkq1ppp/2p5/8/5N2/5Q2/PPPB1PPP/3R1RK1 w - - 0 1'
-    let nvl3 = 'r2qk2r/pbppPppp/1p6/8/2P2n1Q/BP6/P4PPP/3RR1K1 w kq - 0 1'
-    let nvl4 = 'r4rk1/p5bn/3p2Np/5Np1/6P1/8/PP5P/2KR1R2 w - - 0 1'
-    let nvl5 = '5r2/k7/Np6/7p/1P2b1pP/4Pr2/R4PKB/8 w - - 0 1'
-
-
+    const levels = [
+        { nivel: 1, fen: '8/7p/5B2/7P/3p4/3Pk1K1/8/q1N5 w - - 0 1' },
+        { nivel: 2, fen: '1nr1r3/pbkq1ppp/2p5/8/5N2/5Q2/PPPB1PPP/3R1RK1 w - - 0 1' },
+        { nivel: 3, fen: 'r2qk2r/pbppPppp/1p6/8/2P2n1Q/BP6/P4PPP/3RR1K1 w kq - 0 1' },
+        { nivel: 4, fen: 'r4rk1/p5bn/3p2Np/5Np1/6P1/8/PP5P/2KR1R2 w - - 0 1' },
+        { nivel: 5, fen: '5r2/k7/Np6/7p/1P2b1pP/4Pr2/R4PKB/8 w - - 0 1' }
+    ]
 
     const [com, setCom] = useState(waifu[0].comentario)
     const [img, setImg] = useState(waifu[0].imagen)
@@ -50,7 +48,7 @@ const ChessGame = ({ level }) => {
     const [tiempoInicial, setTI] = useState(30)
     const [press, setPress] = useState(false)
     const [points, setPoints] = useState(0)
-    const [nvl, setNvl] = useState(nvl3)
+    const [nvl, setNvl] = useState(levels[0].fen)
     const [chess] = useState(new Chess(nvl))
     const [fen, setFen] = useState()
 
@@ -58,29 +56,30 @@ const ChessGame = ({ level }) => {
         console.log('Nivel actualizado:', level);
         switch (level) {
             case 1:
-                setNvl(nvl1)
+                setNvl(levels[0].fen)
                 setTI(20)
                 break
             case 2:
-                setNvl(nvl2)
+                setNvl(levels[1].fen)
                 setTI(30)
                 break
             case 3:
-                setNvl(nvl3)
+                setNvl(levels[2].fen)
                 setTI(40)
                 break
             case 4:
-                setNvl(nvl4)
+                setNvl(levels[3].fen)
                 setTI(50)
                 break
             case 5:
-                setNvl(nvl5)
+                setNvl(levels[4].fen)
                 setTI(60)
                 break
             default:
                 console.log("watafa")
         }
         console.log('Estado del juego actualizado:', nvl);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [level, nvl]);
 
 
@@ -98,8 +97,6 @@ const ChessGame = ({ level }) => {
         setMonaChina(0)
         setPoints(0)
     }
-
-
 
     const handleStart = () => {
         inicio()
@@ -176,8 +173,6 @@ const ChessGame = ({ level }) => {
 
         }
     };
-
-
 
 
     return (

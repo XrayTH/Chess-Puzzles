@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Chessboard from 'chessboardjsx';
-import { Chess } from 'chess.js';
-import iniciarCronometro from './Metodos/iniciarCronometro';
+import React, { useState, useEffect } from 'react'
+import Chessboard from 'chessboardjsx'
+import { Chess } from 'chess.js'
+import iniciarCronometro from './Metodos/iniciarCronometro'
+import { useWindowSize } from './Metodos/WindowSizeTracker'
 import './Styles/Chess.css'
 import waifu1 from "./imagenes/chan1.png"
 import waifu2 from "./imagenes/chan2.png"
@@ -82,8 +83,6 @@ const ChessGame = ({ level }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [level, nvl]);
 
-
-
     const setMonaChina = (x) => {
         setCom(waifu[x].comentario)
         setImg(waifu[x].imagen)
@@ -110,6 +109,10 @@ const ChessGame = ({ level }) => {
             }
         });
     };
+
+    
+    const windowSize = useWindowSize()
+    
 
     const tiempoStringASeconds = (tiempoString) => {
         const [minutos, segundos] = tiempoString.split(':').map(Number);
@@ -182,7 +185,7 @@ const ChessGame = ({ level }) => {
                     position={fen}
                     onDrop={(move) => handleMove({ from: move.sourceSquare, to: move.targetSquare, promotion: 'q' })}
                     draggable={semueve}
-                    width={500}
+                    width={windowSize.width/3}
                     lightSquareStyle={{ backgroundColor: '#B3B3B3' }}
                     darkSquareStyle={{ backgroundColor: '#333333' }}
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Perfil from "./Perfil"
 import Chess from "./Chessboard"
 import Rank from "./Ranking"
-import { Inicio, IniciarSesion, Registrarse } from './Inicio';
+import { Inicio } from './Inicio';
 import "./Styles/App.css"
 import logo from "./imagenes/Logo Chees Puzzles.png"
 import patron1 from "./imagenes/Patron 1.png"

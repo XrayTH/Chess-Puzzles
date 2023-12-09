@@ -10,6 +10,8 @@ function Rank() {
       .getAll()
       .then(initialPlayers => {
         setPlayers(initialPlayers)
+    
+    console.log(players)
       })
   }, [])
 

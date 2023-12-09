@@ -6,6 +6,16 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
+const getByID = (id) => {
+  const request = axios.get(`${baseUrl}/${id}`)
+  return request.then(response => response.data)
+}
+
+const getByUser = (user) => {
+  const request = axios.get(`${baseUrl}/por-usuario/${user}`)
+  return request.then(response => response.data)
+}
+
 const create = newObject => {
   const request = axios.post(baseUrl, newObject)
   return request.then(response => response.data)
@@ -17,4 +27,4 @@ const update = (id, newObject) => {
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, create, update }
+export default { getAll, getByID, getByUser, create, update }

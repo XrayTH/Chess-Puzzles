@@ -7,6 +7,7 @@ import App from './App';
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
   const [noticias, setNoticias] = useState([]);
+  const login = localStorage.getItem('Login')
 
   useEffect(() => {
     noticiaService
@@ -36,7 +37,6 @@ function Inicio() {
           <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
         </div>
       </div>
-
       
       <div className="contenido-container">
         {opcion === 'iniciarSesion' && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
@@ -71,7 +71,7 @@ function IniciarSesion({ onSwitchToRegistro }) {
     <div className="form-container">
       <h2 className="form-title">Iniciar Sesión</h2>
       <form onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="email">Correo Electrónico:</label>
+        <label className="form-label" htmlFor="username">Usuario:</label>
         <input
           className="form-input"
           type="email"

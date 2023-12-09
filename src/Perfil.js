@@ -16,7 +16,7 @@ function Perfil() {
 
   useEffect(() => {
     usuarioService
-      .getByUser("pepe")
+      .getByUser(localStorage.getItem('Login'))
       .then(usuario => {
         setNombre(usuario.user);
         setPuesto(usuario.puesto);

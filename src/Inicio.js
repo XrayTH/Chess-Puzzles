@@ -7,7 +7,6 @@ import App from './App';
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
   const [noticias, setNoticias] = useState([]);
-  const login = localStorage.getItem('Login')
 
   useEffect(() => {
     noticiaService
@@ -35,7 +34,10 @@ function Inicio() {
         <div className="opciones-container oculto">
         <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
           <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
-          <button onClick={()=>localStorage.setItem('Login', 'Algo')}>Iniciar</button>
+          <button onClick={()=>localStorage.setItem('Login', 'Xray')}>Xray</button>
+          <button onClick={()=>localStorage.setItem('Login', 'Mongo')}>Mongo</button>
+          <button onClick={()=>localStorage.setItem('Login', 'pepe')}>pepe</button>
+          <button onClick={()=>localStorage.setItem('Login', 'noname')}>noname</button>
           <button onClick={()=>localStorage.setItem('Login', '')}>Cerrar</button>
         </div>
       </div>

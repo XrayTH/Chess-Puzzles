@@ -1,18 +1,22 @@
 // Inicio.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Styles/Inicio.css";
+import noticiaService from "./services/noticias"
 import App from './App';
 
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
-  const [noticias, setNoticias] = useState([
-    { titulo: 'Nuevo Nivel 6', contenido: 'El nivel 6 se agregará pronto. ¡Mantente actualizado!' },
-    { titulo: 'Próximo Nivel 7', contenido: 'El nivel 7 se agregará pronto. ¡Mantente actualizado!' },
-    { titulo: 'Nueva Actualización', contenido: 'Una gran actualización llegará esta semana. ¡No te la pierdas!' },
-    {titulo: 'Juan Valverde, 1° en el Ranking', contenido: 'Esta semana Juan Valverde es el Número 1, ¡trata de Derrocarlo!'},
-    {titulo: '', contenido: ''}
-    // Agrega más noticias según sea necesario
-  ]);
+  const [noticias, setNoticias] = useState([]);
+
+  useEffect(() => {
+    noticiaService
+      .getAll()
+      .then(initialNoticias => {
+        setNoticias(initialNoticias.reverse())
+    
+    console.log(noticias)
+      })
+  }, [])
 
   const containerClass = opcion ? `inicio-container opciones-seleccionada` : "inicio-container";
   

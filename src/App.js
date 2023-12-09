@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Perfil from "./Perfil"
 import Chess from "./Chessboard"
 import Rank from "./Ranking"
+import AdvLogin from "./advertenciaLogin"
 import { Inicio } from './Inicio';
 import "./Styles/App.css"
 import logo from "./imagenes/Logo Chees Puzzles.png"
@@ -60,12 +61,22 @@ const Article = ({ page }) => {
         </>
       )
 
-    case 2:
-      return (
-        <>
-          <Perfil />
-        </>
-      )
+      case 2:
+        if (localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) {
+          return (
+            <>
+              <Perfil />
+            </>
+          );
+        } else {
+          return (
+            <>
+              <AdvLogin />
+            </>
+          );
+        }
+      
+      
 
     case 3:
       return (

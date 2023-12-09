@@ -35,6 +35,8 @@ function Inicio() {
         <div className="opciones-container oculto">
         <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
           <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
+          <button onClick={()=>localStorage.setItem('Login', 'Algo')}>Iniciar</button>
+          <button onClick={()=>localStorage.setItem('Login', '')}>Cerrar</button>
         </div>
       </div>
       

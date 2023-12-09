@@ -9,7 +9,7 @@ function Rank() {
     usuarioService
       .getAll()
       .then(initialPlayers => {
-        setPlayers(initialPlayers)
+        setPlayers(initialPlayers.sort((a, b) => b.total - a.total))
     
     console.log(players)
       })
@@ -33,7 +33,7 @@ function Rank() {
         <tbody>
           {players.map((player, index) => (
             <tr key={index}>
-              <td>{player.puesto}</td>
+              <td>{player.puesto === 99111 ? 'Sin Clasificar' : player.puesto}</td>
               <td>{player.user}</td>
               <td>{player.total}</td>
               <td>

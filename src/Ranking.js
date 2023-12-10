@@ -13,6 +13,7 @@ function Rank() {
     
     console.log(players)
       })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -1,4 +1,3 @@
-// Inicio.js
 import React, { useState, useEffect } from 'react'
 import sha256 from 'crypto-js/sha256'
 import "./Styles/Inicio.css"
@@ -31,6 +30,7 @@ function Inicio() {
     
     console.log(noticias)
       })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const containerClass = opcion ? `inicio-container opciones-seleccionada` : "inicio-container";
@@ -171,7 +171,7 @@ function IniciarSesion({ onSwitchToRegistro }) {
 function Registrarse({ onSwitchToInicioSesion }) {
   const [nombre, setNombre] = useState('');
   const [contrasena, setContrasena] = useState('');
-  const [mensaje, setMensaje] = useState(''); // Corrección en el uso de useState
+  const [mensaje, setMensaje] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -245,7 +245,6 @@ function Registrarse({ onSwitchToInicioSesion }) {
           onChange={(e) => setContrasena(e.target.value)}
           required
         />
-        {/* Mostrar el mensaje dinámico */}
         {mensaje && <p>{mensaje}</p>}
         <button className="form-button" type="submit">
           Registrarse

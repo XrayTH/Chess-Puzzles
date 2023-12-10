@@ -54,48 +54,51 @@ function Inicio() {
       </div>
       
       <div className="contenido-container">
-        {(localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) && <Logueado noticias={noticias}/>}
         {opcion === 'iniciarSesion' && (localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null) && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
         {opcion === 'registrarse' && (localStorage.getItem('Login') !== "" || localStorage.getItem('Login') !== null) && <Registrarse onSwitchToInicioSesion={() => setOpcion('iniciarSesion')} />}
       </div>
 
-      <div className="noticias-container">
-      <h2>Noticias</h2>
-      {noticias.map((noticia, index) => (
-        <div key={index} className="noticia">
-          <h3>{noticia.titulo}</h3>
-          <p>{noticia.contenido}</p>
-        </div>
-      ))}
-      </div>
+      <ListaNoticias noticias={noticias}/>
     </div>
 
   );}else{
     return(
-    <Logueado/>
+    <Logueado noticias={noticias}/>
     )
   }
 }
 
 function Logueado({ noticias }) {
+
+  const [nombre, setNombre] = useState("");
+
   const divSuperiorStyle = {
     backgroundColor: 'white',
     padding: '20px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     borderRadius: '8px',
     marginBottom: '20px',
+    marginTop: '20px' 
   };
+
+  usuarioService
+      .getByID(localStorage.getItem('Login'))
+      .then(usuario => {
+        setNombre(usuario.user);
+      })
+      .catch(error => {
+        console.error("Error al obtener el usuario:", error);
+      });
 
   return (
     <>
       <div style={divSuperiorStyle}>
         <div>
           <h1>Bienvenido.</h1>
-          <h3>Ha iniciado sesión.</h3>
+          <h3>{nombre}, ha iniciado sesión.</h3>
         </div>
       </div>
-
-      {/*<ListaNoticias noticias={noticias}/>*/}
+      <ListaNoticias noticias={noticias}/>
     </>
   );
 }
@@ -117,6 +120,8 @@ function IniciarSesion({ onSwitchToRegistro }) {
         if (sha256(contrasena).toString() === usuario.password) {
           localStorage.setItem('Login', usuario.id);
           setMensaje("Sesión iniciada");
+          window.location.reload();
+
         } else {
           setMensaje("Contraseña incorrecta");
         }

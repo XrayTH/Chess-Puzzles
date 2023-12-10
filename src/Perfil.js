@@ -39,7 +39,7 @@ function Perfil() {
           <div className="circle"></div>
           <div className="user-info">
             <p>{nombre}</p>
-            <p>Clasificación: {puesto}°</p>
+            <p>Clasificación: {puesto === 99111 ? "Sin Clasificar" : puesto+"°"}</p>
             <p>Puntaje: {points}</p>
           </div>
           {/*<button className="button">Opciones</button>*/}

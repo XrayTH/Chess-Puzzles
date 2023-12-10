@@ -43,7 +43,10 @@ function Perfil() {
             <p>Puntaje: {points}</p>
           </div>
           {/*<button className="button">Opciones</button>*/}
-          <button className="button">Cerrar Sesión</button>
+          <button className="button" onClick={() => {
+            localStorage.setItem('Login', '');
+            window.location.reload();
+          }}>Cerrar</button>
         </div>
 
         <div className="right-box">
@@ -77,7 +80,7 @@ function Perfil() {
           */}
         </div>
       </section>
-  </div>
+    </div>
   );
 }
 

@@ -18,10 +18,10 @@ const Top = ({ page, select }) => {
 
       <nav>
         <ul>
-          <li onClick={() => select(1)}>Inicio</li>
-          <li onClick={() => select(2)}>Perfil</li>
-          <li onClick={() => select(3)}>Puzzles</li>
-          <li onClick={() => select(4)}>Ranking</li>
+          <li onClick={() => {select(1); localStorage.setItem('pagina', '1')}}>Inicio</li>
+          <li onClick={() => {select(2); localStorage.setItem('pagina', '2')}}>Perfil</li>
+          <li onClick={() => {select(3); localStorage.setItem('pagina', '3')}}>Puzzles</li>
+          <li onClick={() => {select(4); localStorage.setItem('pagina', '4')}}>Ranking</li>
         </ul>
       </nav>
     </>
@@ -76,15 +76,21 @@ const Article = ({ page }) => {
           );
         }
       
-      
-
     case 3:
-      return (
-        <article>
+      if (localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) {
+        return (
+          <article>
           <Aside level={level} sLevel={sLevel}/>
           <Chess level={level}/>
         </article>
-      )
+        );
+      } else {
+        return (
+          <>
+            <AdvLogin />
+          </>
+        );
+      }
 
     case 4:
       return (
@@ -105,7 +111,7 @@ const Article = ({ page }) => {
 
 function App() {
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(localStorage.getItem('pagina')*1);
 
   const select = (x) => {
     setPage(x);

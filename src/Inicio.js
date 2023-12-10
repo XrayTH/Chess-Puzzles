@@ -5,6 +5,20 @@ import "./Styles/Inicio.css"
 import noticiaService from "./services/noticias"
 import usuarioService from "./services/usuarios"
 
+function ListaNoticias({ noticias }) {
+  return (
+    <div className="noticias-container">
+      <h2>Noticias</h2>
+      {noticias.map((noticia, index) => (
+        <div key={index} className="noticia">
+          <h3>{noticia.titulo}</h3>
+          <p>{noticia.contenido}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
   const [noticias, setNoticias] = useState([]);
@@ -25,6 +39,7 @@ function Inicio() {
     setOpcion('registrarse');
   };
 
+  if(localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null){
   return (
     <div className={containerClass}>
       <div className="contenedor-bienvenida">
@@ -35,17 +50,13 @@ function Inicio() {
         <div className="opciones-container oculto">
         <button className="opcion-button" onClick={() => setOpcion('iniciarSesion')}>Iniciar Sesión</button>
           <button className="opcion-button" onClick={() => setOpcion('registrarse')}>Registrarse</button>
-          <button onClick={()=>localStorage.setItem('Login', 'Xray')}>Xray</button>
-          <button onClick={()=>localStorage.setItem('Login', 'Mongo')}>Mongo</button>
-          <button onClick={()=>localStorage.setItem('Login', 'pepe')}>pepe</button>
-          <button onClick={()=>localStorage.setItem('Login', 'noname')}>noname</button>
-          
         </div>
       </div>
       
       <div className="contenido-container">
-        {opcion === 'iniciarSesion' && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
-        {opcion === 'registrarse' && <Registrarse onSwitchToInicioSesion={() => setOpcion('iniciarSesion')} />}
+        {(localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) && <Logueado noticias={noticias}/>}
+        {opcion === 'iniciarSesion' && (localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null) && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
+        {opcion === 'registrarse' && (localStorage.getItem('Login') !== "" || localStorage.getItem('Login') !== null) && <Registrarse onSwitchToInicioSesion={() => setOpcion('iniciarSesion')} />}
       </div>
 
       <div className="noticias-container">
@@ -56,20 +67,64 @@ function Inicio() {
           <p>{noticia.contenido}</p>
         </div>
       ))}
-    </div>
+      </div>
     </div>
 
+  );}else{
+    return(
+    <Logueado/>
+    )
+  }
+}
+
+function Logueado({ noticias }) {
+  const divSuperiorStyle = {
+    backgroundColor: 'white',
+    padding: '20px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    marginBottom: '20px',
+  };
+
+  return (
+    <>
+      <div style={divSuperiorStyle}>
+        <div>
+          <h1>Bienvenido.</h1>
+          <h3>Ha iniciado sesión.</h3>
+        </div>
+      </div>
+
+      {/*<ListaNoticias noticias={noticias}/>*/}
+    </>
   );
 }
 
 
 function IniciarSesion({ onSwitchToRegistro }) {
-  const [email, setEmail] = useState('');
+  const [nombre, setNombre] = useState('');
   const [contrasena, setContrasena] = useState('');
-
+  const [mensaje, setMensaje] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Iniciar sesión con: ', email, contrasena);
+
+    usuarioService.getByUser(nombre)
+      .then(usuario => {
+        console.log(usuario.name);
+        console.log(usuario.password);
+        console.log(sha256(contrasena).toString())
+
+        if (sha256(contrasena).toString() === usuario.password) {
+          localStorage.setItem('Login', usuario.id);
+          setMensaje("Sesión iniciada");
+        } else {
+          setMensaje("Contraseña incorrecta");
+        }
+      })
+      .catch(error => {
+        console.error("Error al obtener el usuario:", error);
+        setMensaje("Usuario no encontrado.");
+      });
   };
 
   return (
@@ -79,11 +134,11 @@ function IniciarSesion({ onSwitchToRegistro }) {
         <label className="form-label" htmlFor="username">Usuario:</label>
         <input
           className="form-input"
-          type="email"
+          type="text"
           id="email"
           name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
           required
         />
 
@@ -97,15 +152,12 @@ function IniciarSesion({ onSwitchToRegistro }) {
           onChange={(e) => setContrasena(e.target.value)}
           required
         />
-
+        <p>{mensaje}</p>
         <button className="form-button" type="submit">Iniciar Sesión</button>
         <button
           className="form-button"
           type="button"
-          onClick={onSwitchToRegistro}
-        >
-          Quiero registrarme
-        </button>
+          onClick={onSwitchToRegistro}>Quiero registrarme</button>
       </form>
     </div>
   );

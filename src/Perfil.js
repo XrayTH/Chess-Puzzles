@@ -42,7 +42,6 @@ function Perfil() {
             <p>Clasificación: {puesto === 99111 ? "Sin Clasificar" : puesto+"°"}</p>
             <p>Puntaje: {points}</p>
           </div>
-          {/*<button className="button">Opciones</button>*/}
           <button className="button" onClick={() => {
             localStorage.setItem('Login', '');
             window.location.reload();

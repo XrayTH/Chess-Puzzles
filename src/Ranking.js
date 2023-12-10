@@ -45,7 +45,6 @@ function Rank() {
                 ) : (
                   <span className="equal">=</span>
                 )}
-                {/* Agrega el sentido */}
                 {player.puesto < player.antPuesto ? (
                   <span className="siente">¡Subió!</span>
                 ) : player.puesto > player.antPuesto ? (

@@ -108,14 +108,12 @@ function IniciarSesion({ onSwitchToRegistro }) {
   const [nombre, setNombre] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [mensaje, setMensaje] = useState('')
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     usuarioService.getByUser(nombre)
       .then(usuario => {
-        console.log(usuario.name);
-        console.log(usuario.password);
-        console.log(sha256(contrasena).toString())
 
         if (sha256(contrasena).toString() === usuario.password) {
           localStorage.setItem('Login', usuario.id);
@@ -127,7 +125,6 @@ function IniciarSesion({ onSwitchToRegistro }) {
         }
       })
       .catch(error => {
-        console.error("Error al obtener el usuario:", error);
         setMensaje("Usuario no encontrado.");
       });
   };
@@ -206,13 +203,11 @@ function Registrarse({ onSwitchToInicioSesion }) {
   
       if (usuario === null) {
         const nuevoUsuario = await usuarioService.create(userObject);
-        console.log("Respuesta del servicio al crear usuario:", nuevoUsuario)
         setMensaje(`Cuenta "${nuevoUsuario.user}" creada, inicie sesión.`);
       } else {
         setMensaje("Usuario ya existente.");
       }
     } catch (error) {
-      console.error("Error en la solicitud:", error);
       setMensaje("Ocurrió un error al procesar la solicitud.");
     }
   };

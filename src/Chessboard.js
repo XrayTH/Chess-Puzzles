@@ -118,10 +118,6 @@ const ChessGame = ({ level }) => {
     };
 
     const subirPuntaje = (points, seLvl) => {
-        console.log("puntos: "+points)
-        let nombre = "";
-        let puesto = 0;
-        let p = 0;
         let fP1 = 0;
         let fP2 = 0;
         let fP3 = 0;
@@ -138,10 +134,6 @@ const ChessGame = ({ level }) => {
         usuarioService
             .getByID(localStorage.getItem('Login'))
             .then(usuario => {
-                // Asigna los valores después de obtener el usuario
-                nombre = usuario.user;
-                puesto = usuario.puesto;
-                p = usuario.total;
                 fP1 = usuario.firstlvl1;
                 fP2 = usuario.firstlvl2;
                 fP3 = usuario.firstlvl3;
@@ -235,7 +227,6 @@ const ChessGame = ({ level }) => {
         setFen()
         const newPoints = 1
         setPoints(newPoints)
-        console.log(points)
         subirPuntaje(newPoints, seLvl)
     }
 
@@ -245,7 +236,6 @@ const ChessGame = ({ level }) => {
 
                 setFen(chess.fen(move));
                 console.log(chess.fen(move))
-
 
                 if (chess.isCheckmate()) {
 
@@ -262,6 +252,7 @@ const ChessGame = ({ level }) => {
                     })
                     subirPuntaje((newPoints * vidas), seLvl)
                 } else {
+                    
                     //alert("Sigue intentando...")
                     setMonaChina(1)
                     setFen(chess.fen(chess.undo()))
@@ -269,7 +260,6 @@ const ChessGame = ({ level }) => {
 
                     if (vidas === 1) {
                         lose()
-
                     }
                 }
 
@@ -281,7 +271,6 @@ const ChessGame = ({ level }) => {
 
             if (vidas === 1) {
                 lose()
-
             }
 
         }

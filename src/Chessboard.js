@@ -15,6 +15,8 @@ import waifu5 from "./imagenes/chan5.png"
 
 const ChessGame = ({ level }) => {
 
+    
+
     const waifu = [
         {
             comentario: "Bienvenido onii-chan, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",

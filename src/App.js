@@ -110,10 +110,17 @@ const Article = ({ page }) => {
 
 function App() {
   console.log(localStorage.getItem('Login'))
+
   const [page, setPage] = useState(localStorage.getItem('pagina')*1);
+
+  if(localStorage.getItem('pagina')*1 === '' || localStorage.getItem('pagina')*1 === null){
+    setPage(1)
+  }
 
   const select = (x) => {
     setPage(x);
+    window.location.reload();
+
   };
 
   return (

@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react'
+import usuarioService from "./services/usuarios"
 import './Styles/Rank.css';
 
 function Rank() {
-  const [players, setPlayers] = useState([
-    { puesto: 1, nombre: 'Valverde', puntaje: 150, posicionAnterior: 2 },
-    { puesto: 2, nombre: 'Javier', puntaje: 90, posicionAnterior: 1 },
-    // Agrega más jugadores según sea necesario
-  ]);
+  const [players, setPlayers] = useState([]);
+
+  useEffect(() => {
+    usuarioService
+      .getAll()
+      .then(initialPlayers => {
+        setPlayers(initialPlayers.sort((a, b) => b.total - a.total))
+    
+    console.log(players)
+      })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="rank-container">
@@ -26,21 +34,20 @@ function Rank() {
         <tbody>
           {players.map((player, index) => (
             <tr key={index}>
-              <td>{player.puesto}</td>
-              <td>{player.nombre}</td>
-              <td>{player.puntaje}</td>
+              <td>{player.puesto === 99111 ? 'Sin Clasificar' : player.puesto}</td>
+              <td>{player.user}</td>
+              <td>{player.total}</td>
               <td>
-                {player.puesto < player.posicionAnterior ? (
+                {player.puesto < player.antPuesto ? (
                   <span className="arrow-up">&uarr;</span>
-                ) : player.puesto > player.posicionAnterior ? (
+                ) : player.puesto > player.antPuesto ? (
                   <span className="arrow-down">&darr;</span>
                 ) : (
                   <span className="equal">=</span>
                 )}
-                {/* Agrega el sentido */}
-                {player.puesto < player.posicionAnterior ? (
+                {player.puesto < player.antPuesto ? (
                   <span className="siente">¡Subió!</span>
-                ) : player.puesto > player.posicionAnterior ? (
+                ) : player.puesto > player.antPuesto ? (
                   <span className="siente">¡Bajó!</span>
                 ) : (
                   <span className="siente">¡Se mantuvo!</span>

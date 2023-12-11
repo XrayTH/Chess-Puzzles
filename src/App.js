@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-//import Inicio from "./Inicio"
 import Perfil from "./Perfil"
 import Chess from "./Chessboard"
 import Rank from "./Ranking"
+import AdvLogin from "./advertenciaLogin"
 import { Inicio } from './Inicio';
 import "./Styles/App.css"
 import logo from "./imagenes/Logo Chees Puzzles.png"
@@ -17,10 +17,10 @@ const Top = ({ page, select }) => {
 
       <nav>
         <ul>
-          <li onClick={() => select(1)}>Inicio</li>
-          <li onClick={() => select(2)}>Perfil</li>
-          <li onClick={() => select(3)}>Puzzles</li>
-          <li onClick={() => select(4)}>Ranking</li>
+          <li onClick={() => {select(1); localStorage.setItem('pagina', '1')}}>Inicio</li>
+          <li onClick={() => {select(2); localStorage.setItem('pagina', '2')}}>Perfil</li>
+          <li onClick={() => {select(3); localStorage.setItem('pagina', '3')}}>Puzzles</li>
+          <li onClick={() => {select(4); localStorage.setItem('pagina', '4')}}>Ranking</li>
         </ul>
       </nav>
     </>
@@ -60,20 +60,36 @@ const Article = ({ page }) => {
         </>
       )
 
-    case 2:
-      return (
-        <>
-          <Perfil />
-        </>
-      )
-
+      case 2:
+        if (localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) {
+          return (
+            <>
+              <Perfil />
+            </>
+          );
+        } else {
+          return (
+            <>
+              <AdvLogin />
+            </>
+          );
+        }
+      
     case 3:
-      return (
-        <article>
+      if (localStorage.getItem('Login') !== "" && localStorage.getItem('Login') !== null) {
+        return (
+          <article>
           <Aside level={level} sLevel={sLevel}/>
           <Chess level={level}/>
         </article>
-      )
+        );
+      } else {
+        return (
+          <>
+            <AdvLogin />
+          </>
+        );
+      }
 
     case 4:
       return (
@@ -93,11 +109,18 @@ const Article = ({ page }) => {
 }
 
 function App() {
+  console.log(localStorage.getItem('Login'))
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(localStorage.getItem('pagina')*1);
+
+  if(localStorage.getItem('pagina')*1 === '' || localStorage.getItem('pagina')*1 === null){
+    setPage(1)
+  }
 
   const select = (x) => {
     setPage(x);
+    window.location.reload();
+
   };
 
   return (

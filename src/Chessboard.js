@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Chessboard from 'chessboardjsx'
 import { Chess } from 'chess.js'
+import usuarioService from "./services/usuarios"
 import iniciarCronometro from './Metodos/iniciarCronometro'
 import { useWindowSize } from './Metodos/WindowSizeTracker'
 import './Styles/Chess.css'
@@ -10,9 +11,9 @@ import waifu3 from "./imagenes/chan3.png"
 import waifu4 from "./imagenes/chan4.png"
 import waifu5 from "./imagenes/chan5.png"
 
-//Fronted
-
 const ChessGame = ({ level }) => {
+
+    
 
     const waifu = [
         {
@@ -49,7 +50,8 @@ const ChessGame = ({ level }) => {
     const [tiempoInicial, setTI] = useState(30)
     const [press, setPress] = useState(false)
     const [points, setPoints] = useState(0)
-    const [nvl, setNvl] = useState(levels[0].fen)
+    const [seLvl, setSeLvl] = useState(levels[0])
+    const [nvl, setNvl] = useState(seLvl.fen)
     const [chess] = useState(new Chess(nvl))
     const [fen, setFen] = useState()
 
@@ -57,22 +59,27 @@ const ChessGame = ({ level }) => {
         console.log('Nivel actualizado:', level);
         switch (level) {
             case 1:
+                setSeLvl(levels[0])
                 setNvl(levels[0].fen)
                 setTI(20)
                 break
             case 2:
+                setSeLvl(levels[1])
                 setNvl(levels[1].fen)
                 setTI(30)
                 break
             case 3:
+                setSeLvl(levels[2])
                 setNvl(levels[2].fen)
                 setTI(40)
                 break
             case 4:
+                setSeLvl(levels[3])
                 setNvl(levels[3].fen)
                 setTI(50)
                 break
             case 5:
+                setSeLvl(levels[4])
                 setNvl(levels[4].fen)
                 setTI(60)
                 break
@@ -80,7 +87,7 @@ const ChessGame = ({ level }) => {
                 console.log("watafa")
         }
         console.log('Estado del juego actualizado:', nvl);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [level, nvl]);
 
     const setMonaChina = (x) => {
@@ -110,9 +117,99 @@ const ChessGame = ({ level }) => {
         });
     };
 
+    const subirPuntaje = (points, seLvl) => {
+        let fP1 = 0;
+        let fP2 = 0;
+        let fP3 = 0;
+        let fP4 = 0;
+        let fP5 = 0;
+        let p1 = 0;
+        let p2 = 0;
+        let p3 = 0;
+        let p4 = 0;
+        let p5 = 0;
+
+        let putObject = {}
     
+        usuarioService
+            .getByID(localStorage.getItem('Login'))
+            .then(usuario => {
+                fP1 = usuario.firstlvl1;
+                fP2 = usuario.firstlvl2;
+                fP3 = usuario.firstlvl3;
+                fP4 = usuario.firstlvl4;
+                fP5 = usuario.firstlvl5;
+                p1 = usuario.bestlvl1;
+                p2 = usuario.bestlvl2;
+                p3 = usuario.bestlvl3;
+                p4 = usuario.bestlvl4;
+                p5 = usuario.bestlvl5;
+    
+                switch (seLvl.nivel) {
+                    case 1:
+                        if (fP1 <= 0) {
+                            putObject.firstlvl1 = points;
+                        }
+    
+                        if (points > p1) {
+                            putObject.bestlvl1 = points;
+                        }
+                        break;
+    
+                    case 2:
+                        if (fP2 <= 0) {
+                            putObject.firstlvl2 = points;
+                        }
+    
+                        if (points > p2) {
+                            putObject.bestlvl2 = points;
+                        }
+                        break;
+    
+                    case 3:
+                        if (fP3 <= 0) {
+                            putObject.firstlvl3 = points;
+                        }
+    
+                        if (points > p3) {
+                            putObject.bestlvl3 = points;
+                        }
+                        break;
+    
+                    case 4:
+                        if (fP4 <= 0) {
+                            putObject.firstlvl4 = points;
+                        }
+    
+                        if (points > p4) {
+                            putObject.bestlvl4 = points;
+                        }
+                        break;
+    
+                    case 5:
+                        if (fP5 <= 0) {
+                            putObject.firstlvl5 = points;
+                        }
+    
+                        if (points > p5) {
+                            putObject.bestlvl5 = points;
+                        }
+                        break;
+    
+                    default:
+                        break;
+                }
+                console.log("objeto"+putObject)
+                const putUsuario = usuarioService.update(localStorage.getItem('Login'), putObject);
+                console.log("Respuesta:", putUsuario);
+            })
+            .catch(error => {
+                console.error("Error al obtener el usuario:", error);
+            });
+    };
+    
+
     const windowSize = useWindowSize()
-    
 
     const tiempoStringASeconds = (tiempoString) => {
         const [minutos, segundos] = tiempoString.split(':').map(Number);
@@ -128,6 +225,9 @@ const ChessGame = ({ level }) => {
         setSemueve(false)
         setPress(false)
         setFen()
+        const newPoints = 1
+        setPoints(newPoints)
+        subirPuntaje(newPoints, seLvl)
     }
 
     const handleMove = (move) => {
@@ -137,13 +237,12 @@ const ChessGame = ({ level }) => {
                 setFen(chess.fen(move));
                 console.log(chess.fen(move))
 
-
                 if (chess.isCheckmate()) {
 
                     //alert("Buen Trabajo!")
                     setMonaChina(3)
                     const newPoints = tiempoStringASeconds(tiempo);
-                    setPoints((newPoints*vidas));
+                    setPoints((newPoints * vidas));
                     console.log("su puntaje es:" + newPoints);
                     setSemueve(false)
                     setTiempo("0:00")
@@ -151,7 +250,9 @@ const ChessGame = ({ level }) => {
                     iniciarCronometro(0, (tiempoFormateado) => {
                         setTiempo(tiempoFormateado)
                     })
+                    subirPuntaje((newPoints * vidas), seLvl)
                 } else {
+                    
                     //alert("Sigue intentando...")
                     setMonaChina(1)
                     setFen(chess.fen(chess.undo()))
@@ -159,7 +260,6 @@ const ChessGame = ({ level }) => {
 
                     if (vidas === 1) {
                         lose()
-
                     }
                 }
 
@@ -171,7 +271,6 @@ const ChessGame = ({ level }) => {
 
             if (vidas === 1) {
                 lose()
-
             }
 
         }
@@ -185,7 +284,7 @@ const ChessGame = ({ level }) => {
                     position={fen}
                     onDrop={(move) => handleMove({ from: move.sourceSquare, to: move.targetSquare, promotion: 'q' })}
                     draggable={semueve}
-                    width={windowSize.width/3}
+                    width={windowSize.width / 3}
                     lightSquareStyle={{ backgroundColor: '#B3B3B3' }}
                     darkSquareStyle={{ backgroundColor: '#333333' }}
 

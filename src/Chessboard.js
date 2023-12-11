@@ -11,8 +11,6 @@ import waifu3 from "./imagenes/chan3.png"
 import waifu4 from "./imagenes/chan4.png"
 import waifu5 from "./imagenes/chan5.png"
 
-//backend
-
 const ChessGame = ({ level }) => {
 
     

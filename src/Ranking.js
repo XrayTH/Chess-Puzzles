@@ -22,6 +22,8 @@ function Rank() {
         Ranking
         <span className="corona">👑</span>
       </h2>
+      <p>Al Puntaje Total solo se sumarán los Puntajes del primer intento, Los mejores Puntajes individuales
+         los puede ver en su Perfil.</p>
       <table className="rank-table">
         <thead>
           <tr>

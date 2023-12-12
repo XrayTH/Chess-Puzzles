@@ -109,23 +109,26 @@ const Article = ({ page }) => {
 }
 
 function App() {
-  console.log(localStorage.getItem('Login'))
+  const [page, setPage] = useState(localStorage.getItem('pagina') * 1);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  const [page, setPage] = useState(localStorage.getItem('pagina')*1);
-
-  if(localStorage.getItem('pagina')*1 === '' || localStorage.getItem('pagina')*1 === null){
-    setPage(1)
+  if (localStorage.getItem('pagina') * 1 === '' || localStorage.getItem('pagina') * 1 === null) {
+    setPage(1);
   }
 
   const select = (x) => {
     setPage(x);
     window.location.reload();
+  };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <div>
-      <div>
+      <button className={`toggle-sidebar ${isSidebarOpen ? 'arrow-left' : 'arrow-right'}`} onClick={toggleSidebar}></button>
+      <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <Top page={page} select={select} />
         <Article page={page} />
       </div>

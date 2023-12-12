@@ -33,7 +33,7 @@ function Inicio() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const containerClass = opcion ? `inicio-container opciones-seleccionada` : "inicio-container";
+  const containerClass = opcion ? 'inicio-container opciones-seleccionada' : "inicio-container";
   
   const switchToRegistro = () => {
     setOpcion('registrarse');
@@ -73,12 +73,16 @@ function Logueado({ noticias }) {
   const [nombre, setNombre] = useState("");
 
   const divSuperiorStyle = {
+    position: 'fixed',
+    top: '20px',
+    right: '0',
+    width: '400px',
     backgroundColor: 'white',
+    margin: '200px', 
     padding: '20px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     borderRadius: '8px',
-    marginBottom: '20px',
-    marginTop: '20px' 
+    color: 'black',
+    textAlign: 'center'
   };
 
   usuarioService
@@ -198,12 +202,12 @@ function Registrarse({ onSwitchToInicioSesion }) {
         bestlvl5: 0,
         total: 0,
         puesto: 99111,
-        antPuesto: 9111
+        antPuesto: 99111
       };
   
       if (usuario === null) {
         const nuevoUsuario = await usuarioService.create(userObject);
-        setMensaje(`Cuenta "${nuevoUsuario.user}" creada, inicie sesión.`);
+        setMensaje('Cuenta "${nuevoUsuario.user}" creada, inicie sesión.');
       } else {
         setMensaje("Usuario ya existente.");
       }

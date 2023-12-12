@@ -2,24 +2,20 @@
   text-align: center;
 }
 
-/* Estilo para el encabezado (header) */
 header {
   background-color: #009933; /* Verde oscuro */
   color: #ffffff; /* Texto blanco */
   display: flex;
   padding: 0px;
   height: 158px;
-  width: 1350px;
 }
 
 header img {
-  height: 158px;
-  width: 700px;
+  height: 100%; /* Ajusta la altura al 100% del contenedor (header) */
 }
 
 #logo {
-  margin-left: 12%;
-  margin-right: 12%;
+  margin: 0 auto; /* Establece el margen automático a los lados para centrar el logo */
 }
 
 /* Estilo para la barra de navegación (nav) */
@@ -87,5 +83,39 @@ aside li {
   color: #333;
 }
 
+.app-container.sidebar-open aside {
+  display: block;
+}
 
+/* Estilo para ocultar la barra lateral */
+.app-container.sidebar-closed aside {
+  display: none;
+}
+
+/* Estilo para el botón de alternar la barra lateral */
+.toggle-sidebar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #669933;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para la flecha izquierda */
+.arrow-left::before {
+  content: '\2190'; /* Código Unicode para la flecha izquierda */
+  font-size: 20px;
+  color: white;
+}
+
+/* Estilo para la flecha derecha */
+.arrow-right::before {
+  content: '\2192'; /* Código Unicode para la flecha derecha */
+  font-size: 20px;
+  color: white;
+}
 

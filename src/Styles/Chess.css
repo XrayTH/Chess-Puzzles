@@ -69,9 +69,15 @@
 }
 
 #kwaii {
-    margin: 1px;
-    width: 400px;
+    width: 100%;
     text-align: center;
     cursor: no-drop;
-    
 }
+
+/* Media Query para ocultar la imagen kwaii en pantallas más pequeñas */
+@media only screen and (max-width: 800px) {
+    #kwaii {
+        display: none;
+    }
+}
+

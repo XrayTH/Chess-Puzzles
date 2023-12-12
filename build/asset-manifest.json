@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.516eaac7.css",
+    "main.js": "/static/js/main.376fc1c5.js",
+    "static/media/chan1.png": "/static/media/chan1.fb1ab73b8c914b39791c.png",
+    "static/media/chan4.png": "/static/media/chan4.3093767ecd7ebf143a3d.png",
+    "static/media/chan3.png": "/static/media/chan3.4703ad6ccfb42cd143fd.png",
+    "static/media/chan5.png": "/static/media/chan5.4a9d97a95e698c93242e.png",
+    "static/media/chan2.png": "/static/media/chan2.3b7ed631564a0794ecfe.png",
+    "static/media/Logo Chees Puzzles.png": "/static/media/Logo Chees Puzzles.073d048cf415c1355d45.png",
+    "static/media/Patron 1.png": "/static/media/Patron 1.af02196a6b740b99010e.png",
+    "static/media/patron 2.png": "/static/media/patron 2.1dbffd974eb8ad35bf92.png",
+    "index.html": "/index.html",
+    "main.516eaac7.css.map": "/static/css/main.516eaac7.css.map",
+    "main.376fc1c5.js.map": "/static/js/main.376fc1c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.516eaac7.css",
+    "static/js/main.376fc1c5.js"
+  ]
+}

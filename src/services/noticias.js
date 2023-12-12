@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/noticias'
+const baseUrl = 'https://chess-backend-413h.onrender.com/api/noticias'
 
 const getAll = () => {
   const request = axios.get(baseUrl)

@@ -101,7 +101,7 @@ const Article = ({ page }) => {
     default:
       return (
         <>
-          <p>Error</p>
+          <Inicio />
         </>
       )
   }

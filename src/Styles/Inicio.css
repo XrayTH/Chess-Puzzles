@@ -14,7 +14,7 @@ body {
     color: #000;
   }
 
-/* Estilo para los títulos h1 y h3 */
+/* Estilo para los títulos*/
   .inicio-header {
     color: #ffffff;
     text-align: center;
@@ -133,12 +133,23 @@ body {
   color: #000;
   border-radius: 8px;
   text-align: center;
-  margin-top: 50px;
+  margin: -250px;
   position: absolute;
-  left: 20px;
-  transition: margin-top 0.3s ease-in-out;
+  left: 300px;
 }
 
+/* Estilo para el contenedor de noticias en Inicio.js */
+.noticias-container{
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px;
+  position: absolute;
+  left: 20px;
+}
 
 /* Media Query para pantallas más pequeñas */
 @media only screen and (max-width: 768px) {

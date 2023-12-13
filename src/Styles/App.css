@@ -11,12 +11,20 @@ header {
 }
 
 header img {
-  height: 100%; /* Ajusta la altura al 100% del contenedor (header) */
+  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Ajusta la altura automáticamente */
+}
+
+#logo {
+  width: auto; /* Ajusta el ancho de la imagen y el logo automáticamente */
+  max-height: 100%; /* Ajusta la altura al 100% del contenedor (header) */
 }
 
 #logo {
   margin: 0 auto; /* Establece el margen automático a los lados para centrar el logo */
 }
+
+
 
 /* Estilo para la barra de navegación (nav) */
 nav {
@@ -119,3 +127,27 @@ aside li {
   color: white;
 }
 
+@media only screen and (max-width: 768px) {
+  header {
+    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  header img {
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
+  }
+
+  nav {
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  nav li {
+    display: block; /* Muestra cada elemento en su propia línea */
+    margin: 10px 0; /* Agrega espacio entre elementos */
+  }
+
+  /* Otros estilos específicos para pantallas más pequeñas... */
+}

@@ -6,7 +6,7 @@
     padding: 50px;
 }
 
-#tools{
+#tools {
     display: flex; 
     margin: 1px;
     width: 600px;
@@ -14,7 +14,7 @@
     color: white;
 }
 
-#mainTools{
+#mainTools {
     margin: 1px;
     width: 250px;
     padding: 5px;
@@ -36,16 +36,16 @@
 }
 
 #comment::before {
-    content: ""; /* Agrega un contenido vacío al pseudo-elemento */
-    position: absolute; /* Establece la posición del pseudo-elemento como absoluta */
-    top: 50%; /* Alinea el pseudo-elemento en la mitad superior del div */
-    left: -10px; /* Desplaza el pseudo-elemento hacia la izquierda */
-    transform: translateY(-50%); /* Centra verticalmente el pseudo-elemento */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-top: 10px solid transparent; /* Crea la punta del globo de diálogo */
-    border-bottom: 10px solid transparent; /* Crea la base del globo de diálogo */
-    border-right: 10px solid #000000; /* Crea el lado derecho del globo de diálogo */
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #000000;
 }
 
 #comment::before {
@@ -75,9 +75,20 @@
 }
 
 /* Media Query para ocultar la imagen kwaii en pantallas más pequeñas */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 100px) {
     #kwaii {
         display: none;
     }
-}
 
+    #tools {
+        width: 100%;
+    }
+
+    #mainTools {
+        width: 100%;
+    }
+
+    #comment {
+        width: 100%;
+    }
+}

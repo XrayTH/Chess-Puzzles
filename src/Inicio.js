@@ -254,7 +254,7 @@ function Registrarse({ onSwitchToInicioSesion }) {
           onClick={onSwitchToInicioSesion}
         >
           Ya tengo una cuenta
-        </button>
+        </button> 
       </form>
     </div>
   );

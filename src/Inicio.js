@@ -73,13 +73,13 @@ function Logueado({ noticias }) {
   const [nombre, setNombre] = useState("");
 
   const divSuperiorStyle = {
-    position: 'fixed',
+   position: 'static',
     top: '20px',
-    right: '0',
-    width: '400px',
+    right: '0px',
+    width: '300px',
     backgroundColor: 'white',
-    margin: '200px', 
-    padding: '20px',
+    margin: '40px', 
+    padding: '30px',
     borderRadius: '8px',
     color: 'black',
     textAlign: 'center'
@@ -94,17 +94,17 @@ function Logueado({ noticias }) {
         console.error("Error al obtener el usuario:", error);
       });
 
-  return (
-    <>
-      <div style={divSuperiorStyle}>
-        <div>
-          <h1>Bienvenido.</h1>
-          <h3>{nombre}, ha iniciado sesión.</h3>
-        </div>
-      </div>
-      <ListaNoticias noticias={noticias}/>
-    </>
-  );
+      return (
+        <>
+          <div className="divSuperior" style={divSuperiorStyle}>
+            <div>
+              <h1>Bienvenido.</h1>
+              <h3>{nombre}, ha iniciado sesión.</h3>
+            </div>
+          </div>
+          <ListaNoticias noticias={noticias}/>
+        </>
+      );
 }
 
 

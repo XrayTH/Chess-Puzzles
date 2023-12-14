@@ -3,21 +3,23 @@
 }
 
 header {
-  background-color: #009933; /* Verde oscuro */
-  color: #ffffff; /* Texto blanco */
+  background-color: #009933;
+  color: #ffffff;
   display: flex;
-  padding: 0px;
+  padding: 0;
   height: 158px;
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
 header img {
-  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
-  height: auto; /* Ajusta la altura automáticamente */
+  max-width: relative; /* Ajusta la imagen al ancho del contenedor */
+  height: relative; /* Ajusta la altura automáticamente */
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
 #logo {
   width: auto; /* Ajusta el ancho de la imagen y el logo automáticamente */
-  max-height: 100%; /* Ajusta la altura al 100% del contenedor (header) */
+  max-height: auto; /* Ajusta la altura al 100% del contenedor (header) */
 }
 
 #logo {
@@ -34,7 +36,7 @@ nav {
 
 nav ul {
   list-style: none;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   color: white;
 }
@@ -44,6 +46,7 @@ nav li {
   margin-right: 20px;
   font-size: 18px;
   cursor: pointer;
+
 }
 
 nav a {
@@ -127,7 +130,7 @@ aside li {
   color: white;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 650px) {
   header {
     height: auto; /* Ajusta la altura automáticamente */
     flex-direction: column; /* Cambia la dirección del flex a columna */

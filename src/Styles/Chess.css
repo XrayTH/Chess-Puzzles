@@ -1,5 +1,5 @@
 #principal {
-    display: flex; 
+    display: flex;
 }
 
 #Chessboard {
@@ -7,7 +7,7 @@
 }
 
 #tools {
-    display: flex; 
+    display: flex;
     margin: 1px;
     width: 600px;
     padding: 10px;
@@ -26,12 +26,12 @@
     border-color: #fffafa;
     margin-top: 25px;
     height: 300px;
-    border-radius: 10px; 
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center; 
-    padding: 10px; 
-    position: relative; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    position: relative;
     text-align: center;
 }
 
@@ -61,8 +61,8 @@
 
 #time {
     margin: 1px;
-    border-style: solid; 
-    border-color: #ffffff; 
+    border-style: solid;
+    border-color: #ffffff;
     height: 200px;
     margin-top: 10px;
     text-align: center;
@@ -75,26 +75,42 @@
 }
 
 /* Media Query para ocultar la imagen kwaii en pantallas más pequeñas */
-@media only screen and (max-width: 400px) and (max-height: 850px) {
-    #kwaii {
-        display: none;
+@media only screen and (max-width: 700px) and (max-height: 850px) {
+    #principal {
+        width: 100%;
+        display: inline;
     }
 
+    
+
     #tools {
-        width: 100%;
+        width: 90%;
+        display: block;
     }
 
     #mainTools {
-        width: 100%;
+        display: flex;
+        width: 90%;
+        justify-content: center;
     }
 
     #comment {
-        width: 100%;
+        width: 50%;
+        height: auto;
+        margin: 5%;
+        margin-left: 10%;
+        padding: 10%;
     }
 
-#chessboard {
-    width: 100%;
-}
+    #time{
+        width: 50%;
+        height: auto;
+        padding: 10%;
+    }
+
+    #chessboard {
+        width: 90%;
+        margin: 10%;
+    }
 
 }
-

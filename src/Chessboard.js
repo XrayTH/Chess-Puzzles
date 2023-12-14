@@ -281,15 +281,15 @@ const ChessGame = ({ level }) => {
         <div id="principal">
             <div id="Chessboard">
             <Chessboard
+                    id="Chessboardsub"
                     position={fen}
                     onDrop={(move) => handleMove({ from: move.sourceSquare, to: move.targetSquare, promotion: 'q' })}
                     draggable={semueve}
-                    width={windowSize.width / 3 <= 385 ? 285 : windowSize.width / 3}
+                    width={windowSize.width / 3 <= 320 ? 320 : windowSize.width / 3}
                     lightSquareStyle={{ backgroundColor: '#B3B3B3' }}
                     darkSquareStyle={{ backgroundColor: '#333333' }}
                 />
             </div>
-
             <div id="tools">
                 <div id="mainTools">
                     <div id="comment">{com}</div>

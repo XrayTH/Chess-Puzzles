@@ -114,7 +114,7 @@ function App() {
 
   let bStyle = {}
 
-  if(localStorage.getItem('pagina') * 1 !== 3){
+  if(localStorage.getItem('pagina') * 1 !== 3 || (localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null) ){
     bStyle = {
       display: 'none'
     }
@@ -136,7 +136,7 @@ function App() {
   return (
     <div>
       <button className={`toggle-sidebar ${isSidebarOpen ? 'arrow-left' : 'arrow-right'}`} onClick={toggleSidebar} style={bStyle}></button>
-      <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      <div id="puzzles" className={`app-container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <Top page={page} select={select} />
         <Article page={page} />
       </div>

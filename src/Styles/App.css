@@ -147,13 +147,20 @@ aside li {
     margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
   }
 
+  article{
+    display: block;
+  }
+
   #logo{
     width: 100%
+  }
+
+  aside{
+    width: 100%;
+    height: auto;
   }
 
   #patron{
     display: none;
   }
-
-  /* Otros estilos específicos para pantallas más pequeñas... */
 }

@@ -284,7 +284,7 @@ const ChessGame = ({ level }) => {
                     position={fen}
                     onDrop={(move) => handleMove({ from: move.sourceSquare, to: move.targetSquare, promotion: 'q' })}
                     draggable={semueve}
-                    width={windowSize.width / 3 <= 385 ? 385 : windowSize.width / 3}
+                    width={windowSize.width / 3 <= 385 ? 285 : windowSize.width / 3}
                     lightSquareStyle={{ backgroundColor: '#B3B3B3' }}
                     darkSquareStyle={{ backgroundColor: '#333333' }}
                 />

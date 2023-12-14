@@ -13,7 +13,7 @@ import patron2 from "./imagenes/patron 2.png"
 const Top = ({ page, select }) => {
   return (
     <>
-      <header><img src={patron1} alt="Chess Puzzles"/><img id="logo" src={logo} alt="Chess Puzzles" /><img src={patron2} alt="Chess Puzzles"/></header>
+      <header><img id="patron" src={patron1} alt="Chess Puzzles"/><img id="logo" src={logo} alt="Chess Puzzles" /><img id="patron" src={patron2} alt="Chess Puzzles"/></header>
 
       <nav>
         <ul>

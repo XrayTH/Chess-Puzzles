@@ -142,14 +142,12 @@ aside li {
     margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
   }
 
-  nav {
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+  #logo{
+    width: 100%
   }
 
-  nav li {
-    display: block; /* Muestra cada elemento en su propia línea */
-    margin: 10px 0; /* Agrega espacio entre elementos */
+  #patron{
+    display: none;
   }
 
   /* Otros estilos específicos para pantallas más pequeñas... */

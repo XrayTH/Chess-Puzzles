@@ -3,7 +3,7 @@
 }
 
 #Chessboard {
-    padding: 50px;
+    padding: 20px;
 }
 
 #tools {
@@ -91,5 +91,10 @@
     #comment {
         width: 100%;
     }
+
+#chessboard {
+    width: 100%;
+}
+
 }
 

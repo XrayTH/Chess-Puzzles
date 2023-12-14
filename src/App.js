@@ -112,7 +112,15 @@ function App() {
   const [page, setPage] = useState(localStorage.getItem('pagina') * 1);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  if (localStorage.getItem('pagina') * 1 === '' || localStorage.getItem('pagina') * 1 === null) {
+  let bStyle = {}
+
+  if(localStorage.getItem('pagina') * 1 !== 3){
+    bStyle = {
+      display: 'none'
+    }
+  }
+
+  if (localStorage.getItem('pagina') * 1 === '' || localStorage.getItem('pagina') * 1 === null || localStorage.getItem('pagina') * 1 === undefined) {
     setPage(1);
   }
 
@@ -127,7 +135,7 @@ function App() {
 
   return (
     <div>
-      <button className={`toggle-sidebar ${isSidebarOpen ? 'arrow-left' : 'arrow-right'}`} onClick={toggleSidebar}></button>
+      <button className={`toggle-sidebar ${isSidebarOpen ? 'arrow-left' : 'arrow-right'}`} onClick={toggleSidebar} style={bStyle}></button>
       <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <Top page={page} select={select} />
         <Article page={page} />

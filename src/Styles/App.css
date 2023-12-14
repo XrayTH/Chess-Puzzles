@@ -18,12 +18,17 @@ header img {
 }
 
 #logo {
-  width: auto; /* Ajusta el ancho de la imagen y el logo automáticamente */
+  max-width: 50%; /* Ajusta el ancho de la imagen y el logo automáticamente */
   max-height: auto; /* Ajusta la altura al 100% del contenedor (header) */
 }
 
 #logo {
   margin: 0 auto; /* Establece el margen automático a los lados para centrar el logo */
+}
+
+#patron{
+  min-width: 15%;
+  max-width: 30%;
 }
 
 

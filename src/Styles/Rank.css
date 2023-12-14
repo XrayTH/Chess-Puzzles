@@ -4,7 +4,7 @@ body {
 }
 
 .rank-container {
-  max-width: 600px;
+  max-width: 50%;
   margin: 20px auto;
   text-align: center;
 }
@@ -21,7 +21,7 @@ h4{
 }
 
 .rank-table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   margin-top: 20px;
   overflow: hidden;
@@ -90,9 +90,11 @@ h4{
     max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
   }
 
+  
+
   .rank-table th,
   .rank-table td {
-    padding: 8px; /* Reducir el espacio en las celdas en pantallas pequeñas */
+    padding: 5px; /* Reducir el espacio en las celdas en pantallas pequeñas */
   }
 
   .corona,

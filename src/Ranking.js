@@ -36,8 +36,8 @@ function Rank() {
         <tbody>
           {players.map((player, index) => (
             <tr key={index}>
-              <td>{player.puesto === 99111 ? 'Sin Clasificar' : player.puesto}</td>
-              <td>{player.user}</td>
+              <td>{player.puesto === 99111 ? 'N/A' : player.puesto}</td>
+              <td>{player.user.length > 15 ? `${player.user.slice(0, 11)}...` : player.user}</td>
               <td>{player.total}</td>
               <td>
                 {player.puesto < player.antPuesto ? (
@@ -52,7 +52,7 @@ function Rank() {
                 ) : player.puesto > player.antPuesto ? (
                   <span className="siente">¡Bajó!</span>
                 ) : (
-                  <span className="siente">¡Se mantuvo!</span>
+                  <span className="siente">¡Igual!</span>
                 )}
               </td>
             </tr>

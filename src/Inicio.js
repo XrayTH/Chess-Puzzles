@@ -42,6 +42,7 @@ function Inicio() {
   if(localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null){
   return (
     <div className={containerClass}>
+      <ListaNoticias noticias={noticias}/>
       <div className="contenedor-bienvenida">
         <div className="inicio-header">
           <h1 className="inicio-title">Bienvenido.</h1>
@@ -57,8 +58,6 @@ function Inicio() {
         {opcion === 'iniciarSesion' && (localStorage.getItem('Login') === "" || localStorage.getItem('Login') === null) && <IniciarSesion onSwitchToRegistro={switchToRegistro} />}
         {opcion === 'registrarse' && (localStorage.getItem('Login') !== "" || localStorage.getItem('Login') !== null) && <Registrarse onSwitchToInicioSesion={() => setOpcion('iniciarSesion')} />}
       </div>
-
-      <ListaNoticias noticias={noticias}/>
     </div>
 
   );}else{
@@ -74,12 +73,7 @@ function Logueado({ noticias }) {
 
   const divSuperiorStyle = {
    position: 'static',
-    top: '20px',
-    right: '0px',
-    width: '300px',
     backgroundColor: 'white',
-    margin: '40px', 
-    padding: '30px',
     borderRadius: '8px',
     color: 'black',
     textAlign: 'center'
@@ -96,6 +90,7 @@ function Logueado({ noticias }) {
 
       return (
         <>
+        <div id="loggg">
           <div className="divSuperior" style={divSuperiorStyle}>
             <div>
               <h1>Bienvenido.</h1>
@@ -103,6 +98,7 @@ function Logueado({ noticias }) {
             </div>
           </div>
           <ListaNoticias noticias={noticias}/>
+        </div>
         </>
       );
 }
@@ -207,7 +203,7 @@ function Registrarse({ onSwitchToInicioSesion }) {
   
       if (usuario === null) {
         const nuevoUsuario = await usuarioService.create(userObject);
-        setMensaje('Cuenta "${nuevoUsuario.user}" creada, inicie sesión.');
+        setMensaje("Cuenta ",nuevoUsuario.user," creada, inicie sesión.");
       } else {
         setMensaje("Usuario ya existente.");
       }

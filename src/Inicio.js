@@ -203,7 +203,7 @@ function Registrarse({ onSwitchToInicioSesion }) {
   
       if (usuario === null) {
         const nuevoUsuario = await usuarioService.create(userObject);
-        setMensaje("Cuenta ",nuevoUsuario.user," creada, inicie sesión.");
+        setMensaje("Cuenta "+nuevoUsuario.user+" creada, inicie sesión.");
       } else {
         setMensaje("Usuario ya existente.");
       }

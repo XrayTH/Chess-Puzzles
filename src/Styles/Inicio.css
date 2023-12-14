@@ -136,26 +136,10 @@ body {
   text-align: center;
   top: 165px;
   margin: 1px;
-  position: absolute;
   left: 300px;
 }
 
-/* Estilo para el contenedor de noticias en Inicio.js */
-.noticias-container{
-  width: 400px;
-  padding: 20px;
-  background-color: #ffffff;
-  color: #000;
-  border-radius: 8px;
-  text-align: center;
-  margin: 20px;
-  position: absolute;
-  left: 20px;
-  
-}
-
 .divSuperior {
-  position: absolute;
   right: 0;
   width: 100%; /* Ocupa el 100% del ancho de la pantalla */
   background-color: white;

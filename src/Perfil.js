@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react'
 import usuarioService from "./services/usuarios"
 import './Styles/Perfil.css';
+import imgperfil from "./imagenes/perfil.png"
 
 function Perfil() {
 
@@ -36,10 +37,12 @@ function Perfil() {
     <div className="Perfil">
       <section className="content">
         <div className="left-box">
-          <div className="circle"></div>
+          <div className="circle">
+            <img src={imgperfil} alt="Imagen" className="circle-img" />
+          </div>
           <div className="user-info">
             <p>{nombre}</p>
-            <p>Clasificación: {puesto === 99111 ? "Sin Clasificar" : puesto+"°"}</p>
+            <p>Clasificación: {puesto === 99111 ? "Sin Clasificar" : puesto + "°"}</p>
             <p>Puntaje: {points}</p>
           </div>
           <button className="button" onClick={() => {

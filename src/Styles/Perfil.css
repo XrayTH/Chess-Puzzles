@@ -19,6 +19,7 @@ header {
   flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando el espacio es insuficiente */
 }
 
+
 .left-box {
   text-align: center;
   padding: 20px;
@@ -41,7 +42,16 @@ header {
   height: 200px;
   background-color: #3498db;
   border-radius: 50%;
-  margin-bottom: 10px; 
+  overflow: hidden; /* Para ocultar la parte de la imagen que se sale del círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
 .button {

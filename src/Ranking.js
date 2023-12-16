@@ -3,7 +3,7 @@ import usuarioService from "./services/usuarios"
 import './Styles/Rank.css';
 
 function Rank() {
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState([{puesto: 0, user: "Cargando...", total: "Por favor, espere...", antPuesto: 0}]);
 
   useEffect(() => {
     usuarioService

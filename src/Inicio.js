@@ -20,7 +20,7 @@ function ListaNoticias({ noticias }) {
 
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
-  const [noticias, setNoticias] = useState([]);
+  const [noticias, setNoticias] = useState([{titulo: 'Cargando...', contenido: 'Por favor, espere...'}]);
 
   useEffect(() => {
     noticiaService
@@ -94,7 +94,7 @@ function Logueado({ noticias }) {
           <div className="divSuperior" style={divSuperiorStyle}>
             <div>
               <h1>Bienvenido.</h1>
-              <h3>{nombre}, ha iniciado sesión.</h3>
+              <h3>{nombre ? `${nombre}, ha iniciado sesión.` : 'Cargando usuario, por favor espere...'}</h3>
             </div>
           </div>
           <ListaNoticias noticias={noticias}/>
@@ -117,6 +117,7 @@ function IniciarSesion({ onSwitchToRegistro }) {
 
         if (sha256(contrasena).toString() === usuario.password) {
           localStorage.setItem('Login', usuario.id);
+          localStorage.setItem('Usuario', usuario.user);
           setMensaje("Sesión iniciada");
           window.location.reload();
 

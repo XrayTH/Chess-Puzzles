@@ -17,7 +17,7 @@ const ChessGame = ({ level }) => {
 
     const waifu = [
         {
-            comentario: "Bienvenido onii-chan, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",
+            comentario: "Hola otra vez, onii-chan, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",
             imagen: waifu4
         }, {
             comentario: "Esa no es la solucion... ¡Sigue intentando! :)",
@@ -42,7 +42,9 @@ const ChessGame = ({ level }) => {
         { nivel: 5, fen: '5r2/k7/Np6/7p/1P2b1pP/4Pr2/R4PKB/8 w - - 0 1' }
     ]
 
-    const [com, setCom] = useState(waifu[0].comentario)
+
+    const initialUserName = localStorage.getItem('Usuario') || 'usuario';
+    const [com, setCom] = useState(`Bienvenido ${initialUserName}-senpai, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)`);
     const [img, setImg] = useState(waifu[0].imagen)
     const [vidas, setVidas] = useState(3)
     const [semueve, setSemueve] = useState(true)
@@ -294,6 +296,7 @@ const ChessGame = ({ level }) => {
                 <div id="mainTools">
                     <div id="comment">{com}</div>
                     <div id="time">
+                        <p>{windowSize.width}</p>
                         <p>Nivel Seleccionado: {level}</p>
                         <p>Tiempo: {tiempo}</p>
                         <p>Vidas: {vidas}</p>

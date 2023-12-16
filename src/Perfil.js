@@ -6,14 +6,14 @@ import imgperfil from "./imagenes/perfil.png"
 
 function Perfil() {
 
-  const [nombre, setNombre] = useState("");
-  const [puesto, setPuesto] = useState("");
-  const [points, setPoints] = useState("");
-  const [points1, setPoints1] = useState("");
-  const [points2, setPoints2] = useState("");
-  const [points3, setPoints3] = useState("");
-  const [points4, setPoints4] = useState("");
-  const [points5, setPoints5] = useState("");
+  const [nombre, setNombre] = useState("Cargando...");
+  const [puesto, setPuesto] = useState("Cargando...");
+  const [points, setPoints] = useState("Cargando...");
+  const [points1, setPoints1] = useState("Cargando...");
+  const [points2, setPoints2] = useState("Cargando...");
+  const [points3, setPoints3] = useState("Cargando...");
+  const [points4, setPoints4] = useState("Cargando...");
+  const [points5, setPoints5] = useState("Cargando...");
 
   useEffect(() => {
     usuarioService

@@ -74,8 +74,14 @@
     cursor: no-drop;
 }
 
+@media only screen and (min-width: 751px) and (max-width: 1205px){
+    #kwaii{
+        display: none;
+    }
+}
+
 /* Media Query para ocultar la imagen kwaii en pantallas más pequeñas */
-@media only screen and (max-width: 700px) and (max-height: 850px) {
+@media only screen and (max-width: 800px) and (max-height: 850px) {
     #principal {
         width: 90%;
         display: inline;

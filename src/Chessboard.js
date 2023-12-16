@@ -227,9 +227,11 @@ const ChessGame = ({ level }) => {
         setSemueve(false)
         setPress(false)
         setFen()
+        /*
         const newPoints = 1
         setPoints(newPoints)
         subirPuntaje(newPoints, seLvl)
+        */
     }
 
     const handleMove = (move) => {

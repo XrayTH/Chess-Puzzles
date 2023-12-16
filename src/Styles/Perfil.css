@@ -40,7 +40,7 @@ header {
 .circle {
   width: 200px;
   height: 200px;
-  background-color: #3498db;
+  background-color: black;
   border-radius: 50%;
   overflow: hidden; /* Para ocultar la parte de la imagen que se sale del círculo */
   display: flex;

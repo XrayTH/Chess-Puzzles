@@ -296,7 +296,6 @@ const ChessGame = ({ level }) => {
                 <div id="mainTools">
                     <div id="comment">{com}</div>
                     <div id="time">
-                        <p>{windowSize.width}</p>
                         <p>Nivel Seleccionado: {level}</p>
                         <p>Tiempo: {tiempo}</p>
                         <p>Vidas: {vidas}</p>

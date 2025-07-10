@@ -9,9 +9,8 @@ function Rank() {
     usuarioService
       .getAll()
       .then(initialPlayers => {
-        setPlayers(initialPlayers.sort((a, b) => b.total - a.total))
-    
-    console.log(players)
+      if (!initialPlayers) return;
+      setPlayers(initialPlayers.sort((a, b) => b.total - a.total))
       })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

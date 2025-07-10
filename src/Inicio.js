@@ -20,18 +20,24 @@ function ListaNoticias({ noticias }) {
 
 function Inicio() {
   const [opcion, setOpcion] = useState(null);
-  const [noticias, setNoticias] = useState([{titulo: 'Cargando...', contenido: 'Por favor, espere...'}]);
+  const [noticias, setNoticias] = useState([{titulo: 'Cargando...', contenido: 'Por favor, espere... (Si la página no carga, recargue la página)'}]);
 
   useEffect(() => {
-    noticiaService
-      .getAll()
-      .then(initialNoticias => {
-        setNoticias(initialNoticias.reverse())
-    
-    console.log(noticias)
-      })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  noticiaService
+    .getAll()
+    .then(initialNoticias => {
+      if (!initialNoticias) {
+        return;
+      }
+      if (initialNoticias.length === 0) {
+        setNoticias([{ titulo: 'No hay noticias disponibles', contenido: 'Por favor, revise más tarde.' }]);
+      } else {
+        console.log(initialNoticias);
+        setNoticias(initialNoticias.reverse());
+      }
+    });
+}, []); // <- cierres correctos
+
 
   const containerClass = opcion ? 'inicio-container opciones-seleccionada' : "inicio-container";
   
@@ -85,7 +91,7 @@ function Logueado({ noticias }) {
         setNombre(usuario.user);
       })
       .catch(error => {
-        console.error("Error al obtener el usuario:", error);
+        //console.error("Error al obtener el usuario:", error);
       });
 
       return (

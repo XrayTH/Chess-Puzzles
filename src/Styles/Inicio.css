@@ -10,7 +10,6 @@ body {
   align-items: center;
 }
 
-/* Estilo para el título de bienvenida y párrafos en Inicio.js */
   .inicio-container p {
     display: flex;
     align-items: flex-start;
@@ -19,7 +18,6 @@ body {
     color: #000;
   }
 
-/* Estilo para los títulos*/
   .inicio-header {
     color: #ffffff;
     text-align: center;
@@ -28,7 +26,6 @@ body {
 
 
 
-/* Estilo para los botones de opción en Inicio.js */
   .opcion-button {
     background-color: #669933 ;
     color: white;
@@ -46,10 +43,9 @@ body {
     border: 006633;
     border-radius: 4px;
     cursor: pointer;
-    margin: 10px; /* Ajusta el margen aquí para acercar los botones al texto */
+    margin: 10px; 
   }
   
-/* Estilo para etiquetas, inputs y botones del formulario en Inicio.js */
   .form-label,
   .form-input,
   .form-button {
@@ -61,7 +57,6 @@ body {
   }
   
  
-/* Estilo para el botón del formulario */
   .form-button {
     background-color: #669933 ;
     color: white;
@@ -80,13 +75,11 @@ body {
     cursor: pointer;
   }
 
-/* Estilo para las etiquetas del formulario */
   .form-label {
     display: block;
     margin-bottom: 8px;
   }
 
-/* Estilo para los campos de entrada del formulario */
   .form-input {
     width: 100%;
     padding: 8px;
@@ -98,12 +91,10 @@ body {
     display: none;
   }
 
- /* Añade reglas para ocultar las opciones cuando una opción está seleccionada */
 .inicio-container.opciones-seleccionada .opciones-container {
   display: none;
 }
 
-/* Estilo para el contenedor principal de Inicio.js */
 .inicio-container {
   font-family: Arial, sans-serif;
   background-color: #333333;
@@ -131,10 +122,9 @@ body {
   background-color: #ffffff;
   border-radius: 8px;
   text-align: left;
-  margin-left: 20%; /* Ajustado para estar en la esquina derecha y abajo */
+  margin-left: 20%; 
 }
 
-/* Estilo para el contenedor de noticias en Inicio.js */
 .noticias-container {
   background-color: #ffffff;
   color: #000;
@@ -154,7 +144,7 @@ body {
 .divSuperior {
   right: 0;
   padding: 1%;
-  width: 50%; /* Ocupa el 100% del ancho de la pantalla */
+  width: 50%; 
   background-color: white;
   border-radius: 8px;
   color: black;
@@ -164,8 +154,6 @@ body {
 }
 
 
-
-/* Media Query para pantallas más pequeñas */
 @media only screen and (max-width: 768px) {
   .inicio-container {
     display: flex;

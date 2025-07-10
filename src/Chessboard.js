@@ -17,7 +17,7 @@ const ChessGame = ({ level }) => {
 
     const waifu = [
         {
-            comentario: "Hola otra vez, onii-chan, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",
+            comentario: "Hola otra vez, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)",
             imagen: waifu4
         }, {
             comentario: "Esa no es la solucion... ¡Sigue intentando! :)",
@@ -26,10 +26,10 @@ const ChessGame = ({ level }) => {
             comentario: "¡Hmp! Ese movimiento no es valido >:c",
             imagen: waifu5
         }, {
-            comentario: "¡Lo lograste! Buen trabajo, senpai >u<",
+            comentario: "¡Lo lograste! Buen trabajo >u<",
             imagen: waifu1
         }, {
-            comentario: "Has perdido, senpai... QwQ",
+            comentario: "Has perdido... QwQ",
             imagen: waifu2
         }
     ]
@@ -44,7 +44,7 @@ const ChessGame = ({ level }) => {
 
 
     const initialUserName = localStorage.getItem('Usuario') || 'usuario';
-    const [com, setCom] = useState(`Bienvenido ${initialUserName}-senpai, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)`);
+    const [com, setCom] = useState(`Bienvenido ${initialUserName}, haz el jaque en un solo movimiento para ganar. (Cuida del tiempo y tus vidas)`);
     const [img, setImg] = useState(waifu[0].imagen)
     const [vidas, setVidas] = useState(3)
     const [semueve, setSemueve] = useState(true)
@@ -58,7 +58,7 @@ const ChessGame = ({ level }) => {
     const [fen, setFen] = useState()
 
     useEffect(() => {
-        console.log('Nivel actualizado:', level);
+        //console.log('Nivel actualizado:', level);
         switch (level) {
             case 1:
                 setSeLvl(levels[0])
@@ -86,9 +86,9 @@ const ChessGame = ({ level }) => {
                 setTI(60)
                 break
             default:
-                console.log("watafa")
+                //console.log("Estado inesperado del nivel:", level);
         }
-        console.log('Estado del juego actualizado:', nvl);
+        //console.log('Estado del juego actualizado:', nvl);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [level, nvl]);
 
@@ -201,12 +201,10 @@ const ChessGame = ({ level }) => {
                     default:
                         break;
                 }
-                console.log("objeto"+putObject)
                 const putUsuario = usuarioService.update(localStorage.getItem('Login'), putObject);
-                console.log("Respuesta:", putUsuario);
             })
             .catch(error => {
-                console.error("Error al obtener el usuario:", error);
+                //console.error("Error al obtener el usuario:", error);
             });
     };
     
@@ -239,7 +237,7 @@ const ChessGame = ({ level }) => {
             if (chess.move(move)) {
 
                 setFen(chess.fen(move));
-                console.log(chess.fen(move))
+                //console.log(chess.fen(move))
 
                 if (chess.isCheckmate()) {
 
@@ -247,7 +245,7 @@ const ChessGame = ({ level }) => {
                     setMonaChina(3)
                     const newPoints = tiempoStringASeconds(tiempo);
                     setPoints((newPoints * vidas));
-                    console.log("su puntaje es:" + newPoints);
+                    //console.log("su puntaje es:" + newPoints);
                     setSemueve(false)
                     setTiempo("0:00")
                     setPress(false)

@@ -29,7 +29,7 @@ function Perfil() {
         setPoints5(usuario.bestlvl5)
       })
       .catch(error => {
-        console.error("Error al obtener el usuario:", error);
+        //console.error("Error al obtener el usuario:", error);
       });
   }, []);
 

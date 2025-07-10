@@ -1,19 +1,22 @@
 import axios from 'axios'
-const baseUrl = 'https://chess-backend-413h.onrender.com/api/noticias'
+const baseUrl = process.env.REACT_APP_API+'noticias'
 
 const getAll = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+  return axios.get(baseUrl)
+    .then(response => response.data)
+    .catch(() => null)
 }
 
 const create = newObject => {
-  const request = axios.post(baseUrl, newObject)
-  return request.then(response => response.data)
+  return axios.post(baseUrl, newObject)
+    .then(response => response.data)
+    .catch(() => null)
 }
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
-  return request.then(response => response.data)
+  return axios.put(`${baseUrl}/${id}`, newObject)
+    .then(response => response.data)
+    .catch(() => null)
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

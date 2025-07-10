@@ -2,7 +2,7 @@ let interval;
 
 function iniciarCronometro(tiempoInicial, callback) {
   if (interval) {
-    clearInterval(interval); //Detener el cronómetro existente si hay uno en curso
+    clearInterval(interval); 
   }
 
   interval = setInterval(() => {

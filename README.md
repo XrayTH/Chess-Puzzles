@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Chess Puzzles
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Chess Puzzles es un proyecto full stack sencillo que utiliza las librerías **chessboardjsx** y **chess.js** para crear diferentes niveles de puzzles de ajedrez. El sistema incluye puntajes y un personaje asistente que reacciona a las jugadas del usuario. Diseñado en **React** y **Node.js**. Entre sus funcionalidades principales se encuentran:
 
-## Available Scripts
+- **Login sencillo** para acceso de usuarios.
+- **Visualización de puntajes propios**.
+- **Muro de noticias** para compartir novedades y actualizaciones.
+- **Ranking de usuarios** basado en los puntajes obtenidos en los puzzles.
 
-In the project directory, you can run:
+El objetivo del proyecto es ofrecer una experiencia interactiva y entretenida para mejorar las habilidades en ajedrez a través de desafíos progresivos.
 
-### `npm start`
+## Notas
+- Por cuestiones de seguridad el repositorio del backend es privado
+- El backend al estar alojado en un servicio gratuito, el fontend en el enlace de prueba tarda en cargar la informacion, se pide que espere y recargue al rededor de un minuto.
+- Al ser mi primer proyecto full stack, no cuenta con muchas funciones, como personalizar perfil, seguridad sola o rutas. Cosas que en proyectos posteriores he ido aprendiendo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contribuidores
+- **Juan Pablo Valverde Martínez** (Usuario GITHUB: **XrayTH**) (Diseño general, escritor de codigo, arquitectura, backend, **autor** y direccion del equipo)
+- **Santiago Vasquez** (Usuario GITHUB: **Santiago0521**) (escritor de codigo, diseño menu de inicio)
+- **Santiago Mora** (Usuario GITHUB: **Santiago0521**) (escritor de codigo, diseño ranking)
+- **Javier Silva** (Usuario GITHUB: **javi-senpai**) (escritor de codigo, diseño encabezado, perfil y **autor del logo**)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Copyright
+**Todos los derechos reservados a mi persona**, exceptuando:
+- **Javier Silva** autor moral del **logo**, para el uso en este proyecto.
+- El personaje **"Chess-chan"** es de **copropiedad** entre **mi persona y su artista:** [**Nicolle Penagos**](https://www.instagram.com/nicollepenagosm/)
